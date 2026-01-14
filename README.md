@@ -5,8 +5,3 @@
 - [Visual Discrimination Task](https://github.com/1851701/Visual-Discrimation-Task)
 
 - [Dynamic Sliding Puzzle Game](https://github.com/1851701/Dynamic-Sliding-Puzzle-Game)
-
-<h2> 📜 Certifications</h2>
-
-- <b>CompTIA Network+ </b>
-- <b>CompTIA Security+ </b>
