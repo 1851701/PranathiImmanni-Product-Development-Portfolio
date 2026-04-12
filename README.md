@@ -230,11 +230,41 @@ npm start
 
 ---
 
+## 💬 Let’s connect
+
+<p align="center">
+  <strong>Always happy to meet thoughtful builders and researchers.</strong><br/>
+  <sub>Product design · cognitive science · UX · health-adjacent tech</sub>
+</p>
+
+*I’m interested in conversations that go deeper than pixels — here are a few doors that are open:*
+
+| | |
+|:---:|---|
+| 🤝 | **Product & UX opportunities** — internships, co-ops, freelance, or collaborations on interfaces that reward patience and clarity. |
+| 🏥 | **Healthcare & trust-centered UX** — patient portals, triage flows, accessibility, and honest AI-assisted experiences. |
+| 🧠 | **Cognitive science × design** — attention, memory, and perception in real products; research-informed interaction patterns. |
+| 💻 | **Build & prototype together** — React / Next.js prototypes, Figma handoff, design systems, and calm motion. |
+| 📊 | **Data-informed products** — responsible use of ML / analytics in UX *(privacy, consent, understandable outputs)* — especially health-adjacent spaces. |
+| 📝 | **Portfolio feedback** — constructive critique, case-study ideas, and “what would you ship next?” |
+| 🌐 | **Professional networking** — designers, researchers, PMs, and engineers who value clarity over noise. |
+
+<p align="center">
+  <br/>
+  <a href="mailto:pranathi@immanni.com"><img src="https://img.shields.io/badge/Email-pranathi%40immanni.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/pranathi-immanni-7baa5b246/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  &nbsp;
+  <a href="https://github.com/1851701"><img src="https://img.shields.io/badge/GitHub-1851701-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  &nbsp;
+  <a href="https://www.instagram.com/pranathiimmanni/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  <br/><br/>
+  <sub>📍 San Diego, CA · 📞 (858) 683-4266</sub>
+</p>
+
+---
+
 <div align="center">
-
-### Let’s connect
-
-**Email:** [pranathi@immanni.com](mailto:pranathi@immanni.com) · **Phone:** (858) 683-4266  
 
 **Thanks for reading**
 
