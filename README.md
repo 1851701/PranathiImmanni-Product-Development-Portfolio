@@ -10,8 +10,13 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pranathi-immanni-7baa5b246/)
 [![GitHub](https://img.shields.io/badge/GitHub-1851701-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/1851701)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pranathiimmanni/)
+[![Website](https://img.shields.io/badge/Website-pranathiimmanni.github.io-6B5B95?style=for-the-badge)](https://pranathiimmanni.github.io/)
 
 📍 **San Diego, CA** · 📧 **pranathi@immanni.com**
+
+<br/>
+
+**Also on my profile:** [**pranathiimmanni.github.io**](https://pranathiimmanni.github.io/) (static site) · this **TypeScript** portfolio repo · two **Swift** apps — see the **pinned table** a few sections down.
 
 </div>
 
@@ -136,12 +141,16 @@ This repo is my **Next.js** portfolio site: case studies, resume, contact, motio
 
 ---
 
-## Other repositories
+## Pinned repositories & more on GitHub
 
-| Repository | What it is |
-|------------|------------|
-| [**Visual Discrimination Task**](https://github.com/1851701/Visual-Discrimation-Task) | **Swift** — research-oriented task UI; precision, feedback, and clear trial structure. |
-| [**Dynamic Sliding Puzzle Game**](https://github.com/1851701/Dynamic-Sliding-Puzzle-Game) | **Swift** — classic puzzle mechanics with an emphasis on **responsive controls** and **readable game states**. |
+These match what I highlight on my [**GitHub profile**](https://github.com/1851701) — languages span **TypeScript** (this portfolio), **HTML** (GitHub Pages), and **Swift** (iOS-style work).
+
+| | Language | What it is |
+|---|:--------:|------------|
+| [**PranathiImmanni-Product-Development-Portfolio**](https://github.com/1851701/PranathiImmanni-Product-Development-Portfolio) | **TypeScript** | **This repo** — Next.js portfolio, case studies, resume, motion. |
+| [**pranathiimmanni.github.io**](https://github.com/1851701/pranathiimmanni.github.io) | **HTML** | Source for my [**GitHub Pages**](https://pranathiimmanni.github.io/) site — lightweight personal / project landing. |
+| [**Dynamic Sliding Puzzle Game**](https://github.com/1851701/Dynamic-Sliding-Puzzle-Game) | **Swift** | Sliding puzzle — responsive controls and readable game states. |
+| [**Visual Discrimination Task**](https://github.com/1851701/Visual-Discrimation-Task) | **Swift** | Research-style task UI — precision, feedback, clear trial structure. |
 
 ---
 
@@ -158,9 +167,29 @@ This repo is my **Next.js** portfolio site: case studies, resume, contact, motio
 
 ## GitHub activity
 
+Embedded “stats cards” from third-party services (like **github-readme-stats**) often show as **broken images** on GitHub: the hosting app gets **rate-limited**, or GitHub’s **image proxy** fails to fetch them. Below uses **Shields.io** badges instead — they load reliably.
+
+**For your real contribution graph and full language breakdown, use your profile:** **[github.com/1851701](https://github.com/1851701)**.
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=1851701&show_icons=true&theme=tokyonight&hide_border=true&title_color=6B5B95&icon_color=6B5B95&include_all_commits=true" alt="GitHub stats" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1851701&layout=compact&theme=tokyonight&hide_border=true&title_color=6B5B95&langs_count=8" alt="Top languages" height="170" />
+  <a href="https://github.com/1851701?tab=followers">
+    <img src="https://img.shields.io/github/followers/1851701?style=for-the-badge&label=Followers&logo=github&logoColor=white&color=6B5B95" alt="GitHub followers" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/1851701?tab=repositories">
+    <img src="https://img.shields.io/badge/Repositories-View_all-6B5B95?style=for-the-badge&logo=github&logoColor=white" alt="View repositories" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/1851701/PranathiImmanni-Product-Development-Portfolio/fork">
+    <img src="https://img.shields.io/github/forks/1851701/PranathiImmanni-Product-Development-Portfolio?style=for-the-badge&logo=github&label=Forks&color=6B5B95&logoColor=white" alt="Forks of this repo" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>Languages across my public work (typical mix):</sub><br/><br/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML" />
 </p>
 
 ---
