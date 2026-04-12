@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Cream / tan paper — a touch warmer than before */
+  --background: #f7f1e6;
+  --surface: #ebe2d4;
+  --surface-elevated: #f0e8db;
+  --foreground: #2a2622;
+  --foreground-soft: #3c322b;
+  --muted: #6c6358;
+  --muted-light: #887a6f;
+  /* Muted olive — primary actions */
+  --accent: #6a724f;
+  --accent-hover: #5b6245;
+  --accent-muted: #898f76;
+  --accent-foreground: #f8f2e8;
+  --accent-soft: rgba(106, 114, 79, 0.15);
+  --border: rgba(52, 42, 34, 0.1);
+  --shadow-soft: 0 24px 60px -20px rgba(52, 40, 32, 0.15);
+  --shadow-card: 0 12px 40px -16px rgba(52, 40, 32, 0.11);
+  --shadow-card-hover: 0 20px 50px -18px rgba(52, 40, 32, 0.17);
+  /* Editorial offset “card” shadow (warm, not black) */
+  --shadow-offset: 12px 12px 0 0 rgba(52, 40, 32, 0.17);
+}
+
+.dark {
+  --background: #1c1814;
+  --surface: #252220;
+  --surface-elevated: #2b2723;
+  --foreground: #f3eee7;
+  --foreground-soft: #e6dfd5;
+  --muted: #a79e93;
+  --muted-light: #90877b;
+  --accent: #9b9f87;
+  --accent-hover: #abad95;
+  --accent-muted: #8b8f79;
+  --accent-foreground: #1c1814;
+  --accent-soft: rgba(155, 159, 135, 0.19);
+  --border: rgba(236, 228, 218, 0.09);
+  --shadow-soft: 0 24px 60px -20px rgba(0, 0, 0, 0.46);
+  --shadow-card: 0 12px 40px -16px rgba(0, 0, 0, 0.36);
+  --shadow-card-hover: 0 22px 55px -18px rgba(0, 0, 0, 0.46);
+  --shadow-offset: 12px 12px 0 0 rgba(175, 162, 145, 0.34);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+/* Handwritten accent (Caveat) — polaroid / playful labels */
+.font-caveat {
+  font-family: var(--font-caveat), ui-serif, cursive;
+}
