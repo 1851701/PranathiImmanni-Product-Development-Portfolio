@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site";
 const initial = { name: "", email: "", message: "" };
 
 const fieldClass =
-  "mt-2 w-full rounded-2xl border border-[var(--border)] bg-[var(--surface-elevated)]/90 px-4 py-3 text-[var(--foreground)] outline-none ring-[var(--accent)]/40 transition placeholder:text-[var(--muted)] focus:ring-2 dark:bg-[var(--surface)]/80";
+  "mt-2 w-full rounded-2xl border-0 bg-[var(--surface-elevated)]/95 px-4 py-3.5 text-[var(--foreground)] shadow-[0_1px_2px_rgba(52,40,32,0.05)] ring-1 ring-[var(--border)]/50 outline-none transition placeholder:text-[var(--muted)] focus:ring-2 focus:ring-[var(--accent)]/35 dark:bg-[var(--surface)]/80";
 
 export function ContactForm() {
   const [form, setForm] = useState(initial);
@@ -127,7 +127,7 @@ export function ContactForm() {
             setForm((f) => ({ ...f, message: e.target.value }))
           }
           className={`${fieldClass} resize-y`}
-          placeholder="Tell me about your project or opportunity…"
+          placeholder="type here..."
         />
       </div>
 
@@ -136,9 +136,9 @@ export function ContactForm() {
         disabled={status === "loading"}
         whileHover={{ scale: status === "loading" ? 1 : 1.02 }}
         whileTap={{ scale: status === "loading" ? 1 : 0.98 }}
-        className="w-full rounded-full bg-[var(--accent)] py-3.5 text-sm font-medium tracking-wide text-[var(--accent-foreground)] shadow-[var(--shadow-card)] transition enabled:hover:bg-[var(--accent-hover)] enabled:hover:shadow-[var(--shadow-card-hover)] disabled:opacity-60 sm:w-auto sm:px-12"
+        className="w-full rounded-full bg-[var(--accent)] py-3.5 text-sm font-medium tracking-wide text-[var(--accent-foreground)] shadow-[var(--shadow-card)] transition-[transform,box-shadow,background-color] duration-200 enabled:hover:bg-[var(--accent-hover)] enabled:hover:shadow-[var(--shadow-card-hover)] disabled:opacity-60 sm:w-auto sm:px-12"
       >
-        {status === "loading" ? "Sending…" : "Send message"}
+        {status === "loading" ? "Sending…" : "Send a note"}
       </motion.button>
 
       {status === "success" ? (
