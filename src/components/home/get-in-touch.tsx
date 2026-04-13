@@ -124,30 +124,30 @@ export function GetInTouchSection() {
       id="contact"
       className="pt-2 sm:pt-4"
     >
-      <h2 className="font-serif text-[clamp(2rem,4vw,2.75rem)] font-semibold tracking-tight text-neutral-900 dark:text-[#e8f4fc]">
+      <h2 className="font-serif text-[clamp(1.45rem,2.6vw,2rem)] font-semibold tracking-tight text-neutral-900 dark:text-[#e8f4fc]">
         Let&apos;s Get in Touch
       </h2>
 
-      <p className="mt-10 font-serif text-base font-medium leading-relaxed tracking-[0.02em] text-neutral-800/95 dark:text-[#c5e2f2]">
+      <p className="mt-7 font-serif text-sm font-medium leading-relaxed tracking-[0.02em] text-neutral-800/95 dark:text-[#c5e2f2]">
         Find me Here
       </p>
-      <ul className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-4">
+      <ul className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
         {socialRow.map(({ label, href, Icon }) => (
           <li key={label}>
             <Link
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-serif text-sm font-medium uppercase italic tracking-wide text-neutral-900 underline decoration-neutral-900/40 underline-offset-4 transition hover:decoration-neutral-900 dark:text-[#e8f4fc] dark:decoration-white/40 dark:hover:decoration-white"
+              className="group inline-flex items-center gap-1.5 font-serif text-xs font-medium uppercase italic tracking-wide text-neutral-900 underline decoration-neutral-900/40 underline-offset-4 transition hover:decoration-neutral-900 dark:text-[#e8f4fc] dark:decoration-white/40 dark:hover:decoration-white"
             >
-              <Icon className="h-4 w-4 shrink-0 text-neutral-800 dark:text-[#a8d4f0]" />
+                <Icon className="h-3.5 w-3.5 shrink-0 text-neutral-800 dark:text-[#a8d4f0]" />
               {label}
             </Link>
           </li>
         ))}
       </ul>
 
-      <p className="mt-14 font-serif text-base font-medium leading-relaxed tracking-[0.02em] text-neutral-800/95 dark:text-[#c5e2f2]">
+      <p className="mt-8 font-serif text-sm font-medium leading-relaxed tracking-[0.02em] text-neutral-800/95 dark:text-[#c5e2f2]">
         Say Hello!
       </p>
       {!isPortfolioEmailJsConfigured() ? (
@@ -172,10 +172,10 @@ export function GetInTouchSection() {
 
       <form
         onSubmit={onSubmit}
-        className="mt-5 max-w-4xl space-y-5"
+        className="mt-3.5 max-w-[46rem] space-y-3"
         noValidate
       >
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-2.5 sm:grid-cols-3">
           <div>
             <label htmlFor="git-first" className="sr-only">
               First name
@@ -239,20 +239,20 @@ export function GetInTouchSection() {
             id="git-message"
             name="message"
             required
-            rows={6}
+            rows={4}
             value={form.message}
             onChange={(e) =>
               setForm((f) => ({ ...f, message: e.target.value }))
             }
-            className={`${fieldClass} resize-y min-h-[140px]`}
+            className={`${fieldClass} resize-y min-h-[120px]`}
             placeholder="Message"
           />
         </div>
-        <div className="flex flex-wrap items-center justify-end gap-4 pt-1">
+        <div className="flex flex-wrap items-center justify-end gap-3 pt-0.5">
           <button
             type="submit"
             disabled={status === "loading"}
-            className="rounded-full bg-neutral-900 px-14 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-md transition enabled:hover:bg-neutral-800 disabled:opacity-60 dark:bg-[#0f1729] dark:enabled:hover:bg-black"
+            className="rounded-full bg-neutral-900 px-12 py-3 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-white shadow-md transition enabled:hover:bg-neutral-800 disabled:opacity-60 dark:bg-[#0f1729] dark:enabled:hover:bg-black"
           >
             {status === "loading" ? "Sending…" : "Send"}
           </button>
@@ -281,7 +281,7 @@ export function GetInTouchSection() {
       </form>
 
       <div
-        className="mt-14 space-y-2.5 text-center font-sans text-sm font-medium leading-relaxed tracking-wide text-neutral-800/95 sm:text-base dark:text-[#c5e2f2]"
+        className="mt-8 space-y-2 text-center font-sans text-sm font-medium leading-relaxed tracking-wide text-neutral-800/95 sm:text-[0.95rem] dark:text-[#c5e2f2]"
         aria-label="Contact details"
       >
         <p>

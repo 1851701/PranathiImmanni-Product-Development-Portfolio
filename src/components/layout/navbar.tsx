@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/lib/site";
-import { ThemeToggle } from "./theme-toggle";
 import { PIMark } from "./pi-mark";
 
 const navLinks = [
@@ -72,7 +71,6 @@ export function Navbar() {
             })}
           </nav>
 
-          <ThemeToggle />
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-elevated)]/50 p-2.5 text-[var(--foreground)] md:hidden"

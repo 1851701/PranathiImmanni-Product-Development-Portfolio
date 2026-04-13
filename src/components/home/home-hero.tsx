@@ -18,7 +18,7 @@ export function HomeHero() {
       className="border-b border-[var(--border)] bg-[var(--background)]"
       aria-label="Introduction"
     >
-      <div className="mx-auto max-w-5xl px-6 py-24 sm:px-8 sm:py-32 lg:px-10 lg:py-36">
+      <div className="mx-auto max-w-5xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-14 xl:gap-16">
           <div className="relative h-[min(72vw,280px)] w-[min(72vw,280px)] shrink-0 overflow-hidden rounded-full bg-neutral-200 ring-1 ring-[var(--border)] sm:h-72 sm:w-72 lg:h-80 lg:w-80">
             <Image
