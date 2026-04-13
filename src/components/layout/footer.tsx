@@ -10,26 +10,29 @@ export function Footer() {
         <p className="text-sm tracking-wide text-[var(--muted)]">
           © {year} {siteConfig.name}
         </p>
-        <div className="flex flex-wrap gap-8 text-sm tracking-wide">
+        <nav
+          className="flex flex-wrap gap-8 text-sm tracking-wide"
+          aria-label="Footer"
+        >
           <Link
-            href={siteConfig.social.linkedin}
+            href="/about"
             className="text-[var(--muted)] transition hover:text-[var(--foreground)]"
           >
-            LinkedIn
+            About
           </Link>
           <Link
-            href={siteConfig.social.github}
+            href="/#work"
             className="text-[var(--muted)] transition hover:text-[var(--foreground)]"
           >
-            GitHub
+            Work
           </Link>
-          <a
-            href={`mailto:${siteConfig.email}`}
+          <Link
+            href="/#contact"
             className="text-[var(--muted)] transition hover:text-[var(--foreground)]"
           >
-            Email
-          </a>
-        </div>
+            Contact
+          </Link>
+        </nav>
       </div>
     </footer>
   );

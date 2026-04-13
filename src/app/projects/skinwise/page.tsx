@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: "SkinWise",
   description:
     project?.shortDescription ??
-    "SkinWise — AI-powered skincare assistant. Personalized guidance through intelligent, user-centered insights.",
+    "SkinWise AI powered skincare assistant. Personalized guidance through intelligent, user centered insights.",
   openGraph: {
-    title: "SkinWise — Case study",
+    title: "SkinWise: case study",
     description: project?.shortDescription,
     images: project
       ? [{ url: project.heroImage, width: 1600, height: 900 }]

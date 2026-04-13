@@ -1,10 +1,10 @@
 import Image from "next/image";
+import albumCover from "@/assets/home/taylor-swift-1989-taylors-version.png";
 import { siteConfig } from "@/lib/site";
 
-/** Static favorite album card — copy and art from `siteConfig.getToKnowMe` (no Spotify API). */
+/** Static favorite album card — copy from `siteConfig`; art imported so it always ships with the bundle. */
 export function FavoriteSingerAlbum() {
   const m = siteConfig.getToKnowMe;
-  const src = m.favoriteMusicImage;
 
   return (
     <div>
@@ -21,14 +21,14 @@ export function FavoriteSingerAlbum() {
         className="mt-6 flex flex-col gap-4 rounded-2xl border border-sky-200/80 bg-white/60 p-4 shadow-sm transition hover:border-sky-300 hover:bg-white/90 dark:border-sky-800/60 dark:bg-sky-950/30 dark:hover:border-sky-700 dark:hover:bg-sky-950/50 sm:flex-row sm:items-center"
         aria-label={`${m.favoriteMusicListenHint}: ${m.favoriteMusicDescription}. Opens in a new tab.`}
       >
-        <div className="relative mx-auto aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-xl border border-neutral-200/80 bg-neutral-100 shadow-inner dark:border-neutral-700 dark:bg-neutral-900 sm:mx-0 sm:w-[min(200px,40%)]">
+        <div className="relative mx-auto aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-xl border border-neutral-200/80 bg-neutral-100 shadow-inner dark:border-neutral-700 dark:bg-neutral-900 sm:mx-0 sm:w-[min(200px,40%)] sm:max-w-[200px]">
           <Image
-            src={src}
+            src={albumCover}
             alt={m.favoriteMusicImageAlt}
-            width={768}
-            height={768}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
             sizes="200px"
+            priority
           />
         </div>
         <div className="min-w-0 flex-1 text-center sm:text-left">

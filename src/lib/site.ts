@@ -31,27 +31,24 @@ export const siteConfig = {
     /** Synced with hero subheading where a one-line summary is useful */
     heroTagline:
       "I design intuitive experiences grounded in how people think and feel.",
-    /** First phrase is styled bold in “pathway” layout */
-    philosophyLead:
-      "I believe good design should feel calm and obvious,",
-    philosophyRest: ` reducing noise so people can focus on what matters. I aim for interfaces that are generous with clarity and careful with the user's time.`,
-    personalLead: "I was born and raised in San Diego.",
-    personalRest: ` The ocean and open air still shape how I think about balance. The habits that ground me, slowing down, noticing light and space, moving with intention, show up in how I work: patient research, clear hierarchy, and experiences that do not add stress when life already feels loud.`,
+    /** Home “About Me” body (full paragraphs, top to bottom) */
+    aboutParagraphs: [
+      "I'm a product designer with a strong interest in UX/UI and human interaction design, focused on creating experiences that feel intuitive, thoughtful, and easy to trust.",
+      "I believe good design should feel calm and obvious, reducing noise so people can focus on what matters. I'm drawn to interfaces that are clear, intentional, and respectful of the user's time, especially in moments where complexity or overwhelm already exists.",
+      "I was born and raised in San Diego, where the ocean and open air continue to shape how I think about balance. I'm naturally drawn to slower, more intentional ways of moving through the world, whether that's noticing light and space, taking time to reset, or focusing on small details that often go overlooked.",
+      "That mindset carries directly into my work. I approach design through careful observation and research, thinking about how people interact with systems, where friction appears, and how small decisions can make an experience feel either overwhelming or effortless. I'm especially interested in designing interactions that feel human, accessible, and supportive rather than purely functional.",
+    ] as const,
     /** Scrapbook Q&A (edit to match your story) */
     educationLine: `B.S. in Cognitive Science at the University of California, Irvine, with human-centered research and design coursework that still shapes how I frame problems.`,
-    /** Favorite music — shown with album art in About */
+    /** Static “favorite music” card on the home About section (no API — link only) */
     favoriteMusicHeading: "Favorite singer / album",
-    favoriteMusicDescription: `Taylor Swift — 1989.`,
-    favoriteMusicImage: "/about/taylor-swift-1989.png",
+    favoriteMusicDescription: "Taylor Swift — 1989 (Taylor’s Version)",
+    /** Album art file: `src/assets/home/taylor-swift-1989-taylors-version.png` (imported in FavoriteSingerAlbum) */
     favoriteMusicImageAlt:
-      "1989 album cover — Taylor Swift against a blue sky with seagulls",
-    /**
-     * Opens the album on Spotify in a new tab so visitors can play it in Spotify
-     * (web or app). You cannot legally host full tracks on your site; linking out is the standard approach.
-     */
+      "1989 (Taylor’s Version) album cover — Taylor Swift against a blue sky with seagulls",
+    /** Opens the album in Spotify (web or app); linking out is the standard approach */
     favoriteMusicListenUrl:
       "https://open.spotify.com/album/64LU4c1nfjz1t4VnGhagcg",
-    /** Shown as a hint next to the block (optional visual cue) */
     favoriteMusicListenHint: "Listen on Spotify",
     /** Featured narrative block (Teddy, comfort) */
     teddyNarrative: `Growing up, a worn teddy bear sat on my shelf, not as decoration, but as something to hold when words did not come easily. It was never really about the object. It was comfort without judgment, permission to be small, messy, or quiet, and still be okay. That feeling stayed with me. Today it shows up as the same instinct in my work: interfaces that meet people gently, especially when they are already overwhelmed.`,

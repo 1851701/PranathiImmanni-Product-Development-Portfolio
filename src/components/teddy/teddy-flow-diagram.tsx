@@ -1,8 +1,8 @@
-/** Minimal linear user-flow diagram — rounded nodes and arrows; responsive (horizontal / vertical). */
+/** Minimal linear user flow diagram: rounded nodes and arrows; responsive (horizontal / vertical). */
 
 const STEPS = [
   "Home",
-  "Check-in",
+  "Check in",
   "Journal",
   "Insights",
   "Recommendations",
@@ -32,7 +32,7 @@ export function TeddyFlowDiagram() {
     <div
       className="rounded-2xl bg-[#f7f2ec] px-3 py-8 ring-1 ring-[#ebe4dc] dark:bg-[var(--surface-elevated)]/60 dark:ring-[var(--border)] sm:px-6 sm:py-10"
       role="img"
-      aria-label="User flow: Home, Check-in, Journal, Insights, Recommendations connected in order"
+      aria-label="User flow: Home, Check in, Journal, Insights, Recommendations connected in order"
     >
       {/* Desktop: horizontal */}
       <svg

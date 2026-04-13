@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  isPortfolioEmailJsConfigured,
+  sendPortfolioContactEmailJs,
+} from "@/lib/contact-emailjs";
+import { siteConfig } from "@/lib/site";
 
 const initial = { name: "", email: "", message: "" };
 
@@ -13,26 +18,60 @@ export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
+  const [errorHint, setErrorHint] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
+    setErrorHint(null);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      if (isPortfolioEmailJsConfigured()) {
+        await sendPortfolioContactEmailJs({
+          fullName: form.name,
+          email: form.email,
+          message: form.message,
+        });
+      } else {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          error?: string;
+          detail?: string;
+        };
+        if (!res.ok) {
+          throw new Error(
+            (typeof data.detail === "string" && data.detail) ||
+              (typeof data.error === "string" && data.error) ||
+              `Server error (${res.status}). Set NEXT_PUBLIC_EMAILJS_* in .env.local and restart, or configure RESEND_API_KEY.`,
+          );
+        }
+      }
       setStatus("success");
       setForm(initial);
-    } catch {
+    } catch (err) {
       setStatus("error");
+      setErrorHint(
+        err instanceof Error ? err.message : "Something went wrong.",
+      );
     }
   }
 
   return (
     <form onSubmit={onSubmit} className="space-y-7" noValidate>
+      {!isPortfolioEmailJsConfigured() ? (
+        <p className="rounded-xl border border-amber-500/35 bg-amber-500/10 px-3 py-2 font-sans text-xs leading-relaxed text-amber-950 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-100">
+          Add{" "}
+          <code className="rounded bg-black/5 px-1 dark:bg-white/10">
+            NEXT_PUBLIC_EMAILJS_* 
+          </code>{" "}
+          to <code className="rounded bg-black/5 px-1 dark:bg-white/10">.env.local</code> and
+          restart the dev server so EmailJS can send mail. Otherwise this form uses the server
+          fallback only.
+        </p>
+      ) : null}
       <div>
         <label
           htmlFor="name"
@@ -115,7 +154,17 @@ export function ContactForm() {
           className="text-sm tracking-wide text-[var(--muted-light)]"
           role="alert"
         >
-          Something went wrong. Try again or email directly.
+          Something went wrong. Try again or email{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="underline underline-offset-2"
+          >
+            {siteConfig.email}
+          </a>
+          .
+          {errorHint ? (
+            <span className="mt-2 block text-xs opacity-90">{errorHint}</span>
+          ) : null}
         </p>
       ) : null}
     </form>

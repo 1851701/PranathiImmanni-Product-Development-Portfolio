@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import {
@@ -12,10 +13,18 @@ import {
   MockSymptomChecker,
 } from "@/components/carebridge/carebridge-mockups";
 import {
+  CareBridgePainDiagram,
+  CareBridgeProblemDiagram,
+  CareBridgeResearchDiagram,
+  CareBridgeSolutionDiagram,
+} from "@/components/case-study/case-study-accent-diagrams";
+import {
+  CaseStudySplitWithVisual,
   caseStudySectionSpacing,
   EditorialBody,
   SectionRuleTitle,
 } from "@/components/case-studies/case-study-primitives";
+import { CaseStudyOverviewTeamSection } from "@/components/case-studies/case-study-overview-team";
 import { carebridgeCaseStudy } from "@/data/carebridge-case-study";
 
 const block = caseStudySectionSpacing;
@@ -91,67 +100,74 @@ export function CareBridgeCaseStudy() {
           </header>
         </FadeIn>
 
-        {/* Overview */}
-        <FadeIn className={block}>
-          <SectionRuleTitle title="Overview" />
-          <div className="mt-8">
-            <EditorialBody>
-              {c.overview.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </EditorialBody>
-          </div>
-        </FadeIn>
+        <CaseStudyOverviewTeamSection
+          projectTitle="CareBridge"
+          overview={{
+            date: c.projectOverview.date,
+            scope: c.projectOverview.scope,
+            tools: c.projectOverview.tools,
+            paragraphs: c.projectOverview.paragraphs,
+          }}
+          team={c.team}
+        />
 
         {/* Problem */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Problem" />
-          <div className="mt-8">
-            <EditorialBody>
+          <CaseStudySplitWithVisual
+            visual={<CareBridgeProblemDiagram />}
+          >
+            <EditorialBody className="max-w-none mr-0 w-full">
               {c.problem.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </EditorialBody>
-          </div>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         {/* Solution */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Solution" />
-          <div className="mt-8">
-            <EditorialBody>
-              {c.solution.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </EditorialBody>
-            <ul className="mr-auto mt-8 max-w-[min(42rem,72%)] list-none space-y-3 font-sans text-sm text-[var(--foreground-soft)] sm:text-base">
-              {c.solution.bullets.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2563eb]/70"
-                    aria-hidden
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <CaseStudySplitWithVisual
+            visual={<CareBridgeSolutionDiagram />}
+          >
+            <Fragment>
+              <EditorialBody className="max-w-none mr-0 w-full">
+                {c.solution.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </EditorialBody>
+              <ul className="mt-8 max-w-none list-none space-y-3 font-sans text-sm text-[var(--foreground-soft)] sm:text-base">
+                {c.solution.bullets.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2563eb]/70"
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Fragment>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         {/* User research */}
         <FadeIn className={block}>
           <SectionRuleTitle title="User research" />
-          <div className="mt-8">
-            <EditorialBody>
+          <CaseStudySplitWithVisual
+            visual={<CareBridgeResearchDiagram />}
+          >
+            <EditorialBody className="max-w-none mr-0 w-full">
               {c.userResearch.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </EditorialBody>
-          </div>
+          </CaseStudySplitWithVisual>
           <p className="mt-10 text-sm font-semibold tracking-wide text-[#3d5a7a] dark:text-[#8faab8]">
             Key insights
           </p>
-          <ul className="mr-auto mt-4 max-w-[min(42rem,72%)] list-disc space-y-2 pl-5 font-sans text-sm leading-relaxed text-[var(--foreground-soft)] sm:text-base">
+          <ul className="mr-auto mt-4 max-w-[min(52rem,100%)] list-disc space-y-2 pl-5 font-sans text-sm leading-relaxed text-[var(--foreground-soft)] sm:text-base">
             {c.userResearch.insights.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -161,8 +177,8 @@ export function CareBridgeCaseStudy() {
         {/* Pain points */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Pain points" />
-          <div className="mt-8">
-            <EditorialBody>
+          <CaseStudySplitWithVisual visual={<CareBridgePainDiagram />}>
+            <EditorialBody className="max-w-none mr-0 w-full">
               <ul className="list-none space-y-3">
                 {c.painPoints.map((item) => (
                   <li key={item} className="flex gap-3">
@@ -175,7 +191,7 @@ export function CareBridgeCaseStudy() {
                 ))}
               </ul>
             </EditorialBody>
-          </div>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         {/* Information architecture */}

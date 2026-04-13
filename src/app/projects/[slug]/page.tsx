@@ -14,9 +14,8 @@ type Props = { params: Promise<{ slug: string }> };
 const dedicatedCaseStudySlugs = new Set([
   "skinwise",
   "carebridge",
-  "patient-portal-redesign",
   "teddy",
-  "designing-interaction-through-play",
+  "ui-game-portfolio",
 ]);
 
 export function generateStaticParams() {

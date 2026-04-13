@@ -1,7 +1,3 @@
-import {
-  cognitivePatternGameScreens,
-} from "@/data/cognitive-pattern-game-assets";
-
 export type Project = {
   slug: string;
   title: string;
@@ -25,32 +21,58 @@ export type Project = {
 };
 
 /**
- * Display order is intentional: empathy & emotional design → healthcare UX & systems
- * → technical depth — then additional work.
+ * Display order: featured work first (home + `/projects`), then additional samples.
+ * Featured order: Teddy → UI Game Portfolio → CareBridge → SkinWise.
  */
 export const projects: Project[] = [
   {
     slug: "teddy",
     title: "Teddy",
     shortDescription:
-      "A calm mental wellness app for reflection without performance: quick mood check-ins, private journaling with prompts tucked out of the way, and weekly insights in plain language — so naming how you feel is a pause, not a report card.",
+      "A calm mental wellness app for reflection without performance: quick mood check ins, private journaling with prompts tucked out of the way, and weekly insights in plain language, so naming how you feel is a pause, not a report card.",
     tags: ["Mobile", "Wellness", "UI"],
     thumbnail: "https://picsum.photos/seed/teddy-thumb/1200/800",
     heroImage: "https://picsum.photos/seed/teddy-hero/1600/900",
     overview:
-      "Teddy explores how visual and interaction design can support emotional safety: cream and beige surfaces, rounded components, calm typography, and copy that never rushes the user. Five screens cover home check-in, mood capture, journaling, a simple mood trend, and gentle recommendations — built as live UI in the browser for portfolio presentation.",
+      "Teddy explores how visual and interaction design can support emotional safety: cream and beige surfaces, rounded components, calm typography, and copy that never rushes the user. Five screens cover home check in, mood capture, journaling, a simple mood trend, and gentle recommendations, built as live UI in the browser for portfolio presentation.",
     problem:
-      "Many wellness apps overwhelm with charts, gamification, or cold clinical language. People seeking calm need hierarchy that whispers, not shouts — especially on small screens.",
+      "Many wellness apps overwhelm with charts, gamification, or cold clinical language. People seeking calm need hierarchy that whispers, not shouts, especially on small screens.",
     process:
       "Defined a warm design language (tokens for surfaces, accent brown, shadows), then iterated mobile layouts for thumb reach, readability, and optional inputs without friction.",
     solution:
-      "A cohesive set of high-fidelity mobile screens with a teddy-inspired comfort metaphor: minimal chrome, generous whitespace, soft actions, and disclaimers where appropriate — demonstrating product thinking for mental-health-adjacent UX.",
+      "A cohesive set of high fidelity mobile screens with a teddy inspired comfort metaphor: minimal chrome, generous whitespace, soft actions, and disclaimers where appropriate, demonstrating product thinking for mental health adjacent UX.",
     tools: ["Figma", "React", "Tailwind CSS", "Mobile UX"],
     showcaseStatus: {
-      text: "Fully developed as an interactive prototype — exploring a future release on the App Store.",
+      text: "Fully developed as an interactive prototype, exploring a future release on the App Store.",
       className:
         "mt-2 max-w-xl font-sans text-base font-medium leading-snug text-[var(--foreground-soft)] sm:text-[1.05rem]",
     },
+  },
+  {
+    slug: "ui-game-portfolio",
+    title: "UI Game Portfolio",
+    shortDescription:
+      "Interactive 3D narrative in the browser with physics-based interactions — React, Three.js, Framer Motion, and GSAP. Reached 10K+ unique users in the first 48 hours after launch.",
+    tags: ["React", "Three.js", "Framer Motion", "Web", "UX"],
+    thumbnail: "/projects/ui-game-portfolio/showcase-works-redefine-gaming.png",
+    heroImage: "/projects/ui-game-portfolio/showcase-works-city-hero.png",
+    overview:
+      "A live web experience that pairs a cinematic 3D narrative shell with a learnable interaction loop. Built with React and Three.js, animated with Framer Motion and GSAP, it demonstrates how motion and feedback can teach a system without a manual — with strong early traction after release.",
+    problem:
+      "Spectacle without a model teaches mood but not method. The risk was a beautiful 3D shell with a fuzzy loop underneath, which would undercut the story about interaction craft.",
+    process:
+      "We framed a short repeatable path through the narrative, then tuned timing, physics cues, and feedback until users could explain what would happen on the next interaction. Visual noise dropped whenever it competed with clarity.",
+    solution:
+      "A shipped build with a clear contract: observe, act, see the result, continue — documented here with captures and a live embed so visitors can both see and try.",
+    tools: [
+      "React",
+      "Three.js",
+      "Framer Motion",
+      "GSAP",
+      "TypeScript",
+      "Figma",
+    ],
+    live: "https://game-six-psi-82.vercel.app/",
   },
   {
     slug: "carebridge",
@@ -71,39 +93,21 @@ export const projects: Project[] = [
     tools: ["Figma", "Healthcare UX", "IA", "Accessibility", "AI product ethics", "React concepts"],
   },
   {
-    slug: "patient-portal-redesign",
-    title: "Patient Portal Redesign",
-    shortDescription:
-      "A responsive web portal redesign that makes labs, appointments, messages, and medications easier to find — with stronger hierarchy and accessibility.",
-    tags: ["Healthcare UX", "Web", "Accessibility"],
-    thumbnail: "https://picsum.photos/seed/patientportal/1200/800",
-    heroImage: "https://picsum.photos/seed/patientportalhero/1600/900",
-    overview:
-      "This project reimagines a patient-facing web portal so people can understand medical information, manage appointments, message providers, and track medications without fighting the UI. The focus is information architecture, readability, and patterns that work for older adults and infrequent users — priorities that align with enterprise healthcare products.",
-    problem:
-      "Legacy portals often bury labs, messages, and scheduling behind cluttered navigation and technical lab displays. Cognitive overload in sensitive moments weakens trust and completion rates.",
-    process:
-      "Research-informed IA, task-based dashboard design, iterative wireframes through hi-fi responsive layouts, and accessibility-minded components (contrast, type scale, focus, touch targets).",
-    solution:
-      "A calmer dashboard with clear priorities, simplified lab presentation, streamlined messaging and refill flows, and a reorganized nav across dashboard, appointments, results, messages, medications, billing, and settings.",
-    tools: ["Figma", "IA mapping", "Prototyping", "Accessibility", "Healthcare UX"],
-  },
-  {
     slug: "skinwise",
     title: "SkinWise",
     shortDescription:
-      "An AI-powered app that analyzes skin conditions and delivers personalized insights, making skincare more accessible and intuitive.",
-    tags: ["AI", "Mobile", "UX/UI"],
+      "An AI powered app that analyzes skin conditions and delivers personalized insights, making skincare more accessible and intuitive.",
+    tags: ["AI", "Mobile", "UX and UI"],
     thumbnail: "https://picsum.photos/seed/skinwise/1200/800",
     heroImage: "https://picsum.photos/seed/skinwisehero/1600/900",
     overview:
-      "SkinWise is an AI-assisted mobile experience that helps users understand possible skin conditions through on-device or uploaded imagery, then receive clear, personalized health insights powered by computer vision and generative models. The system was designed end-to-end with privacy as a first-class requirement: Flask APIs orchestrate model calls and business logic, data lives in encrypted SQL storage, and authentication gates every sensitive action. Responsible handling of health-adjacent data is central to my work as a data scientist — SkinWise reflects that commitment in both architecture and UX.",
+      "SkinWise is an AI assisted mobile experience that helps users understand possible skin conditions through on device or uploaded imagery, then receive clear, personalized health insights powered by computer vision and generative models. The system was designed end to end with privacy as a first class requirement: Flask APIs orchestrate model calls and business logic, data lives in encrypted SQL storage, and authentication gates every sensitive action. Responsible handling of health adjacent data is central to my work as a data scientist. SkinWise reflects that commitment in both architecture and UX.",
     problem:
       "People often rely on generic search results for skin concerns, which increases anxiety and misinformation. Any product in this space must pair helpful AI output with transparent limitations, strong consent, and safeguards for photos and personal health signals.",
     process:
       "Mapped the journey from image capture through classification, insight generation, and follow-up education. Implemented Flask services for API composition, integrated computer vision and generative AI endpoints, and designed the persistence layer with encryption, least-privilege access, and auditable authentication flows.",
     solution:
-      "A pipeline that classifies skin imagery, enriches results with careful, personalized copy via generative APIs, and keeps user data protected through encrypted storage and secure sessions — demonstrating that rigorous privacy engineering and a calm, trustworthy interface can coexist.",
+      "A pipeline that classifies skin imagery, enriches results with careful, personalized copy via generative APIs, and keeps user data protected through encrypted storage and secure sessions, demonstrating that rigorous privacy engineering and a calm, trustworthy interface can coexist.",
     tools: [
       "Figma",
       "Python",
@@ -119,45 +123,6 @@ export const projects: Project[] = [
       text: "In Progress!",
       className: "mt-2 font-sans text-lg font-bold text-[var(--foreground)]",
     },
-  },
-  {
-    slug: "designing-interaction-through-play",
-    title: "Designing Interaction Through Play",
-    shortDescription:
-      "A web-based Interactive Pattern Experience exploring UX/UI through flow, feedback, and clarity — interaction and timing over decoration, with a simple pattern loop as the teaching surface.",
-    tags: ["Web", "Interaction Design", "UI", "UX"],
-    thumbnail: cognitivePatternGameScreens.entrance,
-    heroImage: cognitivePatternGameScreens.about,
-    overview:
-      "This project studies how people understand interactive systems through feedback and flow. Built as a browser experience focused on pattern recognition and response, it uses a deliberately minimal surface so that timing, state changes, and clarity — not visual noise — drive engagement.",
-    problem:
-      "Dense or decorative interfaces often obscure the interaction model. For a piece meant to demonstrate UX thinking, the risk was that users would read the visuals before they understood the system — undermining the goal of showing how interaction design shapes behavior.",
-    process:
-      "Framed the work around a short user loop (observe, act, receive feedback), iterated on input affordances and visual states, and aligned copy with what the interface actually does — keeping the structure simple so principles stay visible.",
-    solution:
-      "A minimal interactive prototype with consistent patterns, immediate feedback for every action, and a calm layout that foregrounds flow and responsiveness — framed as a UX/UI interaction study rather than a gameplay showcase.",
-    tools: ["HTML/CSS", "JavaScript", "Interaction design", "UX/UI", "Prototyping"],
-    live: "https://game-six-psi-82.vercel.app/",
-  },
-  {
-    slug: "design-system-refresh",
-    title: "Design System Refresh",
-    shortDescription:
-      "A scalable UI kit and documentation site for a multi-product SaaS team.",
-    tags: ["Design Systems", "React", "UX"],
-    thumbnail: "https://picsum.photos/seed/dsr/800/600",
-    heroImage: "https://picsum.photos/seed/dsrhero/1600/900",
-    overview:
-      "The team needed one source of truth for typography, color, and components across web apps. I led the visual refresh and implementation strategy.",
-    problem:
-      "Inconsistent buttons, spacing, and patterns slowed delivery and confused users moving between products.",
-    process:
-      "Audited existing screens, prioritized tokens (type, color, radius), built Figma libraries, and paired with engineers to ship components in Storybook and React.",
-    solution:
-      "A documented system with accessible defaults, dark mode, and migration guides. Adoption increased and design–dev handoff time dropped.",
-    tools: ["Figma", "Storybook", "React", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://vercel.com",
   },
   {
     slug: "mobile-banking-flow",
@@ -223,8 +188,8 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-/** Curated projects on the home “Works” strip and `/projects` (order in `projects` above). */
-export const PORTFOLIO_SHOWCASE_COUNT = 5;
+/** Curated projects on the home “Works” strip and `/projects` (first N in `projects` above). */
+export const PORTFOLIO_SHOWCASE_COUNT = 4;
 
 export function getFeaturedProjects(
   count = PORTFOLIO_SHOWCASE_COUNT,

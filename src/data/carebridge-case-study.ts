@@ -16,11 +16,25 @@ export const carebridgeCaseStudy = {
       },
     ],
   },
-  overview: [
-    "Healthcare systems are fragmented: scheduling, labs, messaging, and education often live in different mental models — and sometimes different logins. Patients arrive already worried; when portals feel like internal tools, small tasks become high-stakes navigation problems.",
-    "Many people start with search or social threads when symptoms appear, which can amplify anxiety and misinformation. Traditional patient portals excel at document storage but rarely guide someone from “I don’t feel right” to a sensible next step. AI tools can help with triage language, yet they often sit outside the trusted systems where appointments and results already live.",
-    "CareBridge is a concept for a unified web experience: an assistive symptom flow that speaks in plain language, plus the practical tools patients expect — labs, visits, messages, and medications — organized to reduce cognitive load and support older adults and infrequent users.",
-  ],
+  projectOverview: {
+    date: "2026",
+    scope:
+      "Product design for a concept web patient portal, including AI assisted triage, dashboard IA, and accessibility minded UI",
+    tools: [
+      "Figma",
+      "Healthcare UX",
+      "IA",
+      "Accessibility",
+      "AI product ethics",
+      "React concepts",
+    ],
+    paragraphs: [
+      "Healthcare systems are fragmented. Scheduling, labs, messaging, and education often live in different mental models, and sometimes different logins. Patients arrive already worried. When portals feel like internal tools, small tasks become high stakes navigation problems.",
+      "Many people start with search or social threads when symptoms appear, which can amplify anxiety and misinformation. Traditional patient portals excel at document storage but rarely guide someone from “I do not feel right” to a sensible next step. AI tools can help with triage language, yet they often sit outside the trusted systems where appointments and results already live.",
+      "CareBridge is a concept for a unified web experience: an assistive symptom flow that speaks in plain language, plus the practical tools patients expect. Labs, visits, messages, and medications are organized to reduce cognitive load and support older adults and infrequent users.",
+    ],
+  },
+  team: [{ name: "Pranathi Immanni", role: "Product designer" }] as const,
   problem: {
     paragraphs: [
       "When symptoms appear, patients frequently turn to open web search or forums. The results are inconsistent, alarmist, or overly confident — which increases anxiety without improving decision-making.",

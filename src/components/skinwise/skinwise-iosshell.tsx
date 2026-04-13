@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { IosStatusTrailingIcons } from "@/components/ui/ios-status-trailing-icons";
 
 type SkinWisePhoneShellProps = {
   children: ReactNode;
@@ -9,61 +10,6 @@ type SkinWisePhoneShellProps = {
   /** Dark status + content (e.g. camera) — white status glyphs on black. */
   contentTone?: "light" | "dark";
 };
-
-/** iOS-style status glyphs: cellular, Wi‑Fi, battery — color via `className` (light UI = dark ink). */
-function StatusBarTrailingIcons({ className }: { className: string }) {
-  return (
-    <div className={`flex items-center justify-end gap-[5px] ${className}`} aria-hidden>
-      {/* Cellular — four bars */}
-      <svg width="19" height="12" viewBox="0 0 19 12" fill="none" className="shrink-0">
-        <rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor" />
-        <rect x="5" y="6" width="3" height="6" rx="1" fill="currentColor" />
-        <rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor" />
-        <rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor" />
-      </svg>
-      {/* Wi‑Fi */}
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" className="shrink-0">
-        <path
-          d="M8 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-          fill="currentColor"
-        />
-        <path
-          d="M11.2 7.3a4 4 0 00-6.4 0"
-          stroke="currentColor"
-          strokeWidth="1.35"
-          strokeLinecap="round"
-        />
-        <path
-          d="M13.5 4.5a7 7 0 00-11 0"
-          stroke="currentColor"
-          strokeWidth="1.35"
-          strokeLinecap="round"
-        />
-      </svg>
-      {/* Battery */}
-      <svg width="27" height="12" viewBox="0 0 27 12" fill="none" className="shrink-0">
-        <rect
-          x="0.5"
-          y="1.5"
-          width="21"
-          height="9"
-          rx="2.5"
-          stroke="currentColor"
-          strokeOpacity="0.35"
-          strokeWidth="1"
-        />
-        <rect x="2" y="3" width="17" height="6" rx="1.5" fill="currentColor" fillOpacity="0.92" />
-        <path
-          d="M23.5 4v4"
-          stroke="currentColor"
-          strokeOpacity="0.35"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    </div>
-  );
-}
 
 /**
  * iPhone 14/15 Pro–style frame: starlight bezel, Dynamic Island, iOS status row + home indicator.
@@ -127,7 +73,7 @@ export function SkinWisePhoneShell({
                   aria-hidden
                 />
                 <div className="flex w-[56px] justify-end">
-                  <StatusBarTrailingIcons className={statusInk} />
+                  <IosStatusTrailingIcons className={statusInk} />
                 </div>
               </div>
 

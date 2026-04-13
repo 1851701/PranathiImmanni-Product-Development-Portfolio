@@ -10,7 +10,7 @@ import { PIMark } from "./pi-mark";
 
 const navLinks = [
   { href: "/projects", label: "Work." },
-  { href: "/#about-me", label: "About." },
+  { href: "/about", label: "About." },
   { href: "/contact", label: "Contact." },
   { href: "/resume", label: "Resume." },
 ];

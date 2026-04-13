@@ -6,7 +6,7 @@ import type { Project } from "@/data/projects";
 import { PhoneMock } from "@/components/ui/phone-mock";
 import { ShowcaseSkinWiseCard } from "@/components/project/showcase-skinwise-card";
 import { ShowcaseTeddyCard } from "@/components/project/showcase-teddy-card";
-import { ShowcaseDesigningInteractionPlayCard } from "@/components/project/showcase-designing-interaction-play-card";
+import { ShowcaseUiGamePortfolioCard } from "@/components/project/showcase-ui-game-portfolio-card";
 
 type ShowcaseProjectCardProps = {
   project: Project;
@@ -112,8 +112,8 @@ export function ShowcaseProjectCard(props: ShowcaseProjectCardProps) {
   if (props.project.slug === "skinwise") {
     return <ShowcaseSkinWiseCard {...props} />;
   }
-  if (props.project.slug === "designing-interaction-through-play") {
-    return <ShowcaseDesigningInteractionPlayCard {...props} />;
+  if (props.project.slug === "ui-game-portfolio") {
+    return <ShowcaseUiGamePortfolioCard {...props} />;
   }
   return <ShowcaseStandardProjectCard {...props} />;
 }

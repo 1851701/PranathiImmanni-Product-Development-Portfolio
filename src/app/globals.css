@@ -52,6 +52,8 @@
 }
 
 html {
+  /* Slightly larger base type (~17px when browser default is 16px) */
+  font-size: 106.25%;
   scroll-behavior: smooth;
 }
 

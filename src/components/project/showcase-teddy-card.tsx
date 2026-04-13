@@ -67,10 +67,10 @@ export function ShowcaseTeddyCard({ project, index }: ShowcaseTeddyCardProps) {
     <Link
       href="/projects/teddy"
       aria-label={`Open project: ${title}`}
-      className={`group/card block rounded-[2rem] bg-[#f7f3ed]/85 p-10 transition duration-500 ease-out md:p-12 lg:p-14 xl:p-16 dark:bg-[var(--surface-elevated)]/75 ${
+      className={`group/card block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:p-12 ${
         index === 0
-          ? "ring-2 ring-[var(--accent)]/40 [box-shadow:var(--shadow-card-hover)] hover:ring-[var(--accent)]/55 dark:ring-[var(--accent)]/35"
-          : "[box-shadow:var(--shadow-card)] ring-1 ring-[#ebe4dc]/90 hover:[box-shadow:var(--shadow-card-hover)] hover:ring-[#e0d8ce] dark:ring-[var(--border)]"
+          ? "ring-2 ring-[var(--accent)]/40 hover:ring-[var(--accent)]/55 dark:ring-[var(--accent)]/35"
+          : ""
       }`}
     >
       <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16 xl:gap-24">
@@ -99,7 +99,7 @@ export function ShowcaseTeddyCard({ project, index }: ShowcaseTeddyCardProps) {
             {tags.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full bg-[#efe9e2]/95 px-4 py-2 text-xs font-medium tracking-wide text-[#6e6560] shadow-sm ring-1 ring-[#e3dcd4] dark:bg-[var(--background)]/50 dark:text-[var(--muted-light)] dark:ring-[var(--border)]"
+                className="rounded-full bg-[var(--surface)] px-3 py-1.5 text-xs font-medium tracking-wide text-[var(--foreground-soft)] shadow-sm ring-1 ring-[var(--border)]"
               >
                 {tag}
               </li>

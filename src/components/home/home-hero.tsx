@@ -26,7 +26,7 @@ export function HomeHero() {
               alt={siteConfig.name}
               fill
               priority
-              className="object-cover object-[52%_28%]"
+              className="object-cover object-[center_42%]"
               sizes="(max-width: 1024px) 280px, 320px"
             />
           </div>
@@ -72,7 +72,7 @@ export function HomeHero() {
               </nav>
               <p>
                 <Link href="#work" className={workLinkClass}>
-                  View selected work
+                  Check my projects out below!
                 </Link>
               </p>
             </div>

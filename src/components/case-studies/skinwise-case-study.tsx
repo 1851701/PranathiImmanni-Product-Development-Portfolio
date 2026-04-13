@@ -1,5 +1,7 @@
 "use client";
 
+import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   SkinWiseAnalyzingScreen,
@@ -19,15 +21,32 @@ import {
 } from "@/components/skinwise/skinwise-showcase";
 import { FadeIn } from "@/components/ui/fade-in";
 import {
+  CaseStudyDiagramCard,
+  CaseStudyHubSpokeDiagram,
+  CaseStudyNextStepsDiagram,
+  CaseStudyPaletteDiagram,
+  CaseStudyThreePillarHighlight,
+  CaseStudyUserFlowRibbonDiagram,
+} from "@/components/case-study/portfolio-case-study-diagrams";
+import {
+  SkinWiseCompetitiveDiagram,
+  SkinWiseProblemDiagram,
+  SkinWiseSolutionDiagram,
+} from "@/components/case-study/case-study-accent-diagrams";
+import {
+  CaseStudySplitWithVisual,
   caseStudySectionSpacing,
   EditorialBody,
   SectionRuleTitle,
 } from "@/components/case-studies/case-study-primitives";
+import { CaseStudyOverviewTeamSection } from "@/components/case-studies/case-study-overview-team";
 import {
   skinwiseCaseStudy,
+  skinwiseCaseStudyImages,
   skinwiseTimeline,
   skinwiseTimelineIntro,
 } from "@/data/skinwise-case-study";
+import { SkinWisePaperPrototypeDiagrams } from "@/components/skinwise/skinwise-prototype-diagrams";
 
 const sublabelClass =
   "text-sm font-semibold tracking-wide text-[#826c52] dark:text-[#b89a7a]";
@@ -41,52 +60,6 @@ const timelineStepTones = [
   "bg-[#8a9278]",
   "bg-[#5c6350]",
 ] as const;
-
-/** Abstract grayscale blocks for wireframe section — no stock photos. */
-function WireframeBlockScreen({ variant }: { variant: 1 | 2 | 3 }) {
-  return (
-    <div className="flex h-full min-h-0 flex-col bg-[#d8d8dc] p-2.5">
-      <div className="flex gap-1.5">
-        <div className="h-2 w-8 rounded-sm bg-[#aeaeb2]" />
-        <div className="h-2 flex-1 rounded-sm bg-[#c7c7cc]" />
-      </div>
-      {variant === 1 ? (
-        <>
-          <div className="mt-3 space-y-1.5">
-            <div className="h-1.5 w-full rounded-sm bg-[#aeaeb2]" />
-            <div className="h-1.5 w-[92%] rounded-sm bg-[#c7c7cc]" />
-            <div className="h-16 w-full rounded-lg bg-[#ececf0] ring-1 ring-black/5" />
-          </div>
-          <div className="mt-auto h-7 w-full rounded-lg bg-[#aeaeb2]/60" />
-        </>
-      ) : null}
-      {variant === 2 ? (
-        <>
-          <div className="mt-3 grid flex-1 grid-cols-2 gap-1.5">
-            <div className="rounded-md bg-[#ececf0] ring-1 ring-black/5" />
-            <div className="rounded-md bg-[#ececf0] ring-1 ring-black/5" />
-            <div className="col-span-2 h-12 rounded-md bg-[#c7c7cc]/80" />
-          </div>
-        </>
-      ) : null}
-      {variant === 3 ? (
-        <>
-          <div className="mt-3 flex-1 space-y-1">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex gap-1.5">
-                <div className="h-6 w-6 shrink-0 rounded bg-[#aeaeb2]/70" />
-                <div className="min-w-0 flex-1 space-y-1">
-                  <div className="h-1.5 w-full rounded-sm bg-[#c7c7cc]" />
-                  <div className="h-1.5 w-2/3 rounded-sm bg-[#d8d8dc]" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
-      ) : null}
-    </div>
-  );
-}
 
 export function SkinWiseCaseStudy() {
   const c = skinwiseCaseStudy;
@@ -162,42 +135,52 @@ export function SkinWiseCaseStudy() {
           </header>
         </FadeIn>
 
-        {/* Overview + Info */}
+        <CaseStudyOverviewTeamSection
+          projectTitle="SkinWise"
+          overview={{
+            date: c.projectOverview.date,
+            scope: c.projectOverview.scope,
+            tools: c.projectOverview.tools,
+            paragraphs: c.projectOverview.paragraphs,
+          }}
+          team={c.team}
+        />
+
+        {/* Info */}
         <FadeIn className={block}>
-          <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
-            <div>
-              <SectionRuleTitle title="Overview" />
-              <EditorialBody>
-                {c.overview.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </EditorialBody>
-            </div>
-            <div>
-              <SectionRuleTitle title="Info" />
-              <dl className="mt-8 grid max-w-md grid-cols-[minmax(0,7.5rem)_1fr] gap-x-5 gap-y-5 font-sans text-sm sm:text-[0.9375rem]">
-                {c.info.map((row) => (
-                  <div key={row.label} className="contents">
-                    <dt className="font-semibold text-[var(--foreground)]">
-                      {row.label}
-                    </dt>
-                    <dd className="text-[var(--foreground-soft)]">{row.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
+          <SectionRuleTitle title="Info" />
+          <dl className="mt-8 grid max-w-md grid-cols-[minmax(0,7.5rem)_1fr] gap-x-5 gap-y-5 font-sans text-sm sm:text-[0.9375rem]">
+            {c.info.map((row) => (
+              <div key={row.label} className="contents">
+                <dt className="font-semibold text-[var(--foreground)]">
+                  {row.label}
+                </dt>
+                <dd className="text-[var(--foreground-soft)]">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
         </FadeIn>
 
         {/* Background — personal motivation (after Overview, before Problem) */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Background" />
-          <div className="mt-8 max-w-[min(42rem,100%)]">
-            <EditorialBody>
-              {c.background.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </EditorialBody>
+          <div className="mt-8 grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="min-w-0 max-w-[min(42rem,100%)] lg:max-w-none">
+              <EditorialBody>
+                {c.background.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </EditorialBody>
+            </div>
+            <figure className="relative aspect-video w-full min-w-0 overflow-hidden rounded-2xl bg-[#f0e4e6] ring-1 ring-[var(--border)] [box-shadow:var(--shadow-card)]">
+              <Image
+                src={skinwiseCaseStudyImages.backgroundFlatlay}
+                alt="Flat lay of skincare and cosmetic products on a soft pink surface: tubes, jars, and bottles in blush, cream, and metallic tones."
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </figure>
           </div>
         </FadeIn>
 
@@ -206,7 +189,7 @@ export function SkinWiseCaseStudy() {
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
             <div className="flex justify-center lg:justify-start">
               <div className="rounded-[1.75rem] bg-[#ececf0] px-5 py-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ring-1 ring-black/[0.04] dark:bg-[#2a2a2e] dark:ring-white/[0.06] sm:px-8 sm:py-10">
-                <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.medium} caption="Design & prototype — iOS-first">
+                <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.medium} caption="Design and prototype, iOS first">
                   <SkinWiseHomeScreen />
                 </SkinWisePhoneShell>
               </div>
@@ -244,13 +227,13 @@ export function SkinWiseCaseStudy() {
         {/* Problem */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Problem" />
-          <div className="mt-8">
-            <EditorialBody>
+          <CaseStudySplitWithVisual visual={<SkinWiseProblemDiagram />}>
+            <EditorialBody className="max-w-none mr-0 w-full">
               {c.problem.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </EditorialBody>
-          </div>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         <FadeIn className="mt-16 lg:mt-24">
@@ -260,24 +243,26 @@ export function SkinWiseCaseStudy() {
         {/* Solution */}
         <FadeIn className={block}>
           <SectionRuleTitle title="Solution" />
-          <div className="mt-8">
-            <EditorialBody>
-              {c.solution.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </EditorialBody>
-            <ul className="mr-auto mt-8 max-w-[min(42rem,72%)] list-none space-y-3 font-sans text-sm text-[var(--foreground-soft)] sm:text-base">
-              {c.solution.features.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]/70"
-                    aria-hidden
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <CaseStudySplitWithVisual visual={<SkinWiseSolutionDiagram />}>
+            <Fragment>
+              <EditorialBody className="max-w-none mr-0 w-full">
+                {c.solution.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </EditorialBody>
+              <ul className="mt-8 max-w-none list-none space-y-3 font-sans text-sm text-[var(--foreground-soft)] sm:text-base">
+                {c.solution.features.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]/70"
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Fragment>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         <FadeIn className="mt-10 lg:mt-14">
@@ -343,17 +328,17 @@ export function SkinWiseCaseStudy() {
           </div>
 
           <p className={`${sublabelClass} mt-16`}>Competitive analysis</p>
-          <div className="mt-6">
-            <EditorialBody>
+          <CaseStudySplitWithVisual visual={<SkinWiseCompetitiveDiagram />}>
+            <EditorialBody className="max-w-none mr-0 w-full">
               <p>{c.competitiveAnalysis}</p>
             </EditorialBody>
-          </div>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         <FadeIn className="mt-14 lg:mt-20">
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              "Participants wanted results framed as possibilities — not verdicts.",
+              "Participants wanted results framed as possibilities, not verdicts.",
               "Trust rose when retention and deletion were explained before capture.",
               "Dense clinical UI increased anxiety; calm hierarchy won in testing.",
             ].map((quote) => (
@@ -418,7 +403,7 @@ export function SkinWiseCaseStudy() {
 
         {/* Wireframes */}
         <FadeIn className={block}>
-          <SectionRuleTitle title="Wireframes & prototyping" />
+          <SectionRuleTitle title="Wireframes and prototyping" />
           <div className="mt-10 space-y-12">
             <div>
               <h3 className="font-serif text-xl text-[var(--foreground)]">
@@ -436,18 +421,10 @@ export function SkinWiseCaseStudy() {
               </ul>
               <div className="mt-10">
                 <SkinWiseShowcase variant="default">
-                  <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.support} caption="Iteration A">
-                    <WireframeBlockScreen variant={1} />
-                  </SkinWisePhoneShell>
-                  <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.main} caption="Iteration B">
-                    <WireframeBlockScreen variant={2} />
-                  </SkinWisePhoneShell>
-                  <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.support} caption="Iteration C">
-                    <WireframeBlockScreen variant={3} />
-                  </SkinWisePhoneShell>
+                  <SkinWisePaperPrototypeDiagrams />
                 </SkinWiseShowcase>
                 <p className="mt-6 text-center font-sans text-xs text-[var(--muted)]">
-                  Early structure explorations (abstract wireframes — not final UI).
+                  Structure diagrams before high fidelity UI: hierarchy, journey, and surface map.
                 </p>
               </div>
             </div>
@@ -502,7 +479,7 @@ export function SkinWiseCaseStudy() {
                 >
                   <SkinWiseRoutineScreen />
                 </SkinWisePhoneShell>
-                <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.support} caption="Profile & privacy">
+                <SkinWisePhoneShell frameWidth={SKINWISE_PHONE.support} caption="Profile and privacy">
                   <SkinWiseProfileScreen />
                 </SkinWisePhoneShell>
               </SkinWiseShowcase>
@@ -510,10 +487,78 @@ export function SkinWiseCaseStudy() {
           </div>
         </FadeIn>
 
+        {/* Palette, accessibility, takeaways, next steps */}
+        <FadeIn className={block}>
+          <SectionRuleTitle title="Palette, accessibility, takeaways, and next steps" />
+          <div className="mx-auto mt-6 max-w-3xl text-center font-sans text-base leading-relaxed text-[var(--foreground-soft)]">
+            <p>{c.diagramSection.intro}</p>
+          </div>
+          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
+            <CaseStudyDiagramCard
+              theme="skinwise"
+              title="Primary colors"
+              caption={c.diagramSection.paletteIntro}
+            >
+              <CaseStudyPaletteDiagram theme="skinwise" />
+            </CaseStudyDiagramCard>
+            <CaseStudyDiagramCard
+              theme="skinwise"
+              title="Accessibility"
+              caption={c.diagramSection.accessibilityIntro}
+              flush
+            >
+              <CaseStudyThreePillarHighlight
+                theme="skinwise"
+                title={c.diagramSection.accessibilityHighlightTitle}
+                pillars={c.diagramSection.accessibilityPillars}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+          <div className="mt-12 w-full">
+            <CaseStudyDiagramCard
+              theme="skinwise"
+              title="Takeaways"
+              caption={c.diagramSection.takeawaysIntro}
+              centered
+            >
+              <CaseStudyHubSpokeDiagram
+                theme="skinwise"
+                center={c.diagramSection.takeawaysHub.center}
+                branches={c.diagramSection.takeawaysHub.branches}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+          <div className="mt-10">
+            <CaseStudyDiagramCard
+              theme="skinwise"
+              title="User flow at a glance"
+              caption={c.userFlow.schematicCaption}
+            >
+              <CaseStudyUserFlowRibbonDiagram
+                theme="skinwise"
+                steps={c.userFlow.steps}
+                branchNote={c.userFlow.ribbonNote}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+          <div className="mt-10">
+            <CaseStudyDiagramCard
+              theme="skinwise"
+              title="Next steps"
+              caption={c.diagramSection.nextStepsIntro}
+            >
+              <CaseStudyNextStepsDiagram
+                theme="skinwise"
+                steps={c.diagramSection.nextSteps}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+        </FadeIn>
+
         {/* Privacy */}
         <FadeIn className={block}>
           <div className="rounded-[1.75rem] bg-[var(--surface-elevated)] p-8 [box-shadow:var(--shadow-card)] ring-1 ring-[var(--border)] md:p-12">
-            <SectionRuleTitle title="Privacy & trust" />
+            <SectionRuleTitle title="Privacy and trust" />
             <div className="mt-10 grid gap-8 md:grid-cols-3">
               {c.privacy.map((item) => (
                 <div key={item.title}>
@@ -531,15 +576,15 @@ export function SkinWiseCaseStudy() {
 
         {/* Reflection */}
         <FadeIn
-          className={`${block} border-t border-[var(--border)] pt-16 lg:pt-20`}
+          className={`${block} border-t border-[var(--border)] pt-16 lg:pt-24`}
         >
-          <SectionRuleTitle title="Reflection" />
-          <div className="mt-8">
-            <EditorialBody>
+          <div className="mx-auto max-w-[min(42rem,90%)] text-center">
+            <SectionRuleTitle title="Reflection" className="text-center" />
+            <div className="mt-8 space-y-6 font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
               {c.reflection.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
-            </EditorialBody>
+            </div>
           </div>
         </FadeIn>
       </div>

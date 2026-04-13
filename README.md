@@ -115,14 +115,6 @@ This repo is my **Next.js** portfolio site: case studies, resume, contact, motio
 
 ---
 
-### Patient Portal Redesign
-
-**Responsive portal redesign** focused on labs, appointments, messages, and medications — stronger hierarchy and patterns for **older adults** and infrequent users. Stress-tests **information architecture** and readable medical information design.
-
-**Tags:** Healthcare UX · Web · Accessibility · IA · Prototyping
-
----
-
 ### SkinWise — AI + privacy *(in progress)*
 
 **AI-assisted mobile experience** for skin-condition insights from imagery, with **privacy-first** architecture: Flask APIs, encrypted SQL storage, authentication on sensitive paths, and responsible handling of health-adjacent data. Bridges **data science discipline** with **calm, trustworthy** interface design.
@@ -131,9 +123,9 @@ This repo is my **Next.js** portfolio site: case studies, resume, contact, motio
 
 ---
 
-### Designing Interaction Through Play
+### UI Game Portfolio
 
-**Interactive Pattern Experience** — a web prototype about **flow**, **feedback**, and **clarity**, not high-score gameplay. Demonstrates how **timing**, **state changes**, and **minimal UI** support understanding.
+**Web experience** with game influenced art direction and a tight interaction loop. The case study pairs full width captures of the live site with an embed so visitors can see tone and try the loop. **Pranathi Immanni** — product designer; **Kushal Kongara** — software engineer ([portfolio](https://kushalkongara.vercel.app/)).
 
 **Live demo:** [game-six-psi-82.vercel.app](https://game-six-psi-82.vercel.app/)
 

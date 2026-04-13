@@ -20,10 +20,34 @@ export function SectionRuleTitle({
   );
 }
 
-export function EditorialBody({ children }: { children: React.ReactNode }) {
+export function EditorialBody({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="mr-auto max-w-[min(42rem,72%)] space-y-6 font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
+    <div
+      className={`mr-auto max-w-[min(42rem,72%)] space-y-6 font-sans text-base leading-[1.9] text-[var(--foreground-soft)] ${className}`.trim()}
+    >
       {children}
+    </div>
+  );
+}
+
+/** Two-column layout: primary copy + accent diagram (stacks on small screens). */
+export function CaseStudySplitWithVisual({
+  children,
+  visual,
+}: {
+  children: React.ReactNode;
+  visual: React.ReactNode;
+}) {
+  return (
+    <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
+      <div className="min-w-0">{children}</div>
+      <figure className="min-w-0">{visual}</figure>
     </div>
   );
 }

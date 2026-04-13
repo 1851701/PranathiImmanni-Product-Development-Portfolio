@@ -6,7 +6,22 @@ const nextConfig: NextConfig = {
       { source: "/teddy", destination: "/projects/teddy", permanent: true },
       {
         source: "/projects/cognitive-pattern-game",
-        destination: "/projects/designing-interaction-through-play",
+        destination: "/projects/ui-game-portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/designing-interaction-through-play",
+        destination: "/projects/ui-game-portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/patient-portal-redesign",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/projects/design-system-refresh",
+        destination: "/projects",
         permanent: true,
       },
     ];
@@ -21,11 +36,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "i.scdn.co",
         pathname: "/**",
       },
       {

@@ -4,6 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import {
+  CaseStudyDiagramCard,
+  CaseStudyHubSpokeDiagram,
+  CaseStudyNextStepsDiagram,
+  CaseStudyPaletteDiagram,
+  CaseStudyThreePillarHighlight,
+  CaseStudyUserFlowRibbonDiagram,
+} from "@/components/case-study/portfolio-case-study-diagrams";
+import { TeddyProblemDiagram } from "@/components/case-study/case-study-accent-diagrams";
+import {
+  CaseStudySplitWithVisual,
   caseStudySectionSpacing,
   EditorialBody,
   SectionRuleTitle,
@@ -85,7 +95,7 @@ export function TeddyCaseStudy() {
               <div className="order-1 lg:order-2">
                 <p className="sr-only">
                   Preview of four Teddy app screens in iPhone frames: home, mood
-                  check-in, journal, and insights.
+                  check in, journal, and insights.
                 </p>
                 <TeddyHeroLiveMockups />
               </div>
@@ -151,7 +161,7 @@ export function TeddyCaseStudy() {
                       </span>
                       <span className="text-[var(--muted)]">
                         {" "}
-                        — {member.role}
+                        · {member.role}
                       </span>
                     </li>
                   ))}
@@ -166,19 +176,23 @@ export function TeddyCaseStudy() {
           </div>
         </FadeIn>
 
-        {/* 3. Problem — How might we */}
+        {/* 3. Problem framing */}
         <FadeIn className={block}>
-          <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--muted)]">
-            Problem framing
-          </p>
-          <h2 className="mt-4 max-w-[min(100%,40rem)] font-serif text-2xl font-medium leading-snug text-[var(--foreground)] sm:text-3xl md:text-[2.15rem]">
-            {c.problem.hmw}
-          </h2>
-          <div className="mt-8 max-w-2xl">
-            <p className="font-sans text-base leading-[1.85] text-[var(--foreground-soft)] sm:text-lg">
-              {c.problem.body}
-            </p>
-          </div>
+          <CaseStudySplitWithVisual visual={<TeddyProblemDiagram />}>
+            <div className="min-w-0">
+              <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--muted)]">
+                Problem framing
+              </p>
+              <h2 className="mt-4 max-w-[min(100%,40rem)] font-serif text-2xl font-medium leading-snug text-[var(--foreground)] sm:text-3xl md:text-[2.15rem]">
+                {c.problem.hmw}
+              </h2>
+              <div className="mt-8 max-w-2xl">
+                <p className="font-sans text-base leading-[1.9] text-[var(--foreground-soft)] sm:text-lg">
+                  {c.problem.body}
+                </p>
+              </div>
+            </div>
+          </CaseStudySplitWithVisual>
         </FadeIn>
 
         <div
@@ -222,7 +236,7 @@ export function TeddyCaseStudy() {
                   <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl bg-[var(--surface)] shadow-[0_20px_50px_-18px_rgba(58,46,42,0.18)] ring-1 ring-[var(--border)]">
                     <Image
                       src={inspirationImageByKey[ex.imageKey]}
-                      alt={`${ex.title} — reference for design inspiration`}
+                      alt={`${ex.title}, reference for design inspiration`}
                       width={1200}
                       height={800}
                       className="h-auto w-full object-contain"
@@ -289,13 +303,13 @@ export function TeddyCaseStudy() {
 
         {/* Before / after iterations (visual) */}
         <FadeIn className={block}>
-          <SectionRuleTitle title="Before &amp; after" />
+          <SectionRuleTitle title="Before and after" />
           <TeddyBeforeAfterSection />
         </FadeIn>
 
         {/* Design decision cards */}
         <FadeIn className={block}>
-          <SectionRuleTitle title="Iteration &amp; design decisions" />
+          <SectionRuleTitle title="Iteration and design decisions" />
           <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-[var(--muted)]">
             {it.intro}
           </p>
@@ -326,15 +340,84 @@ export function TeddyCaseStudy() {
           </div>
         </FadeIn>
 
+        {/* Palette, accessibility, takeaways, next steps, flow schematic */}
+        <FadeIn className={block}>
+          <SectionRuleTitle title="Palette, accessibility, takeaways, and next steps" />
+          <div className="mt-6 max-w-3xl font-sans text-base leading-relaxed text-[var(--foreground-soft)]">
+            <p>{c.diagramSection.intro}</p>
+          </div>
+          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
+            <CaseStudyDiagramCard
+              theme="teddy"
+              title="Primary colors"
+              caption={c.diagramSection.paletteIntro}
+            >
+              <CaseStudyPaletteDiagram theme="teddy" />
+            </CaseStudyDiagramCard>
+            <div className="flex min-w-0 flex-col gap-10">
+              <CaseStudyDiagramCard
+                theme="teddy"
+                title="Accessibility"
+                caption={c.diagramSection.accessibilityIntro}
+                flush
+              >
+                <CaseStudyThreePillarHighlight
+                  theme="teddy"
+                  title={c.diagramSection.accessibilityHighlightTitle}
+                  pillars={c.diagramSection.accessibilityPillars}
+                />
+              </CaseStudyDiagramCard>
+              <CaseStudyDiagramCard
+                theme="teddy"
+                title="Takeaways"
+                caption={c.diagramSection.takeawaysIntro}
+              >
+                <CaseStudyHubSpokeDiagram
+                  theme="teddy"
+                  center={c.diagramSection.takeawaysHub.center}
+                  branches={c.diagramSection.takeawaysHub.branches}
+                />
+              </CaseStudyDiagramCard>
+            </div>
+          </div>
+          <div className="mt-10">
+            <CaseStudyDiagramCard
+              theme="teddy"
+              title="User flow at a glance"
+              caption={c.userFlow.schematicCardCaption}
+            >
+              <CaseStudyUserFlowRibbonDiagram
+                theme="teddy"
+                steps={c.userFlow.steps}
+                branchNote={c.userFlow.ribbonNote}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+          <div className="mt-10">
+            <CaseStudyDiagramCard
+              theme="teddy"
+              title="Next steps"
+              caption={c.diagramSection.nextStepsIntro}
+            >
+              <CaseStudyNextStepsDiagram
+                theme="teddy"
+                steps={c.diagramSection.nextSteps}
+              />
+            </CaseStudyDiagramCard>
+          </div>
+        </FadeIn>
+
         {/* Reflection */}
         <FadeIn
           className={`${block} border-t border-[var(--border)] pt-16 lg:pt-24`}
         >
-          <SectionRuleTitle title="Reflection" />
-          <div className="mt-8">
-            <EditorialBody>
-              <p>{c.reflection}</p>
-            </EditorialBody>
+          <div className="mx-auto max-w-[min(42rem,90%)] text-center">
+            <SectionRuleTitle title="Reflection" className="text-center" />
+            <div className="mt-8 space-y-6 font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
+              {c.reflection.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </div>

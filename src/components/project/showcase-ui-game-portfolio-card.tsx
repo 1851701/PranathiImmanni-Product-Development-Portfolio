@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
-import { cognitivePatternGameScreens } from "@/data/cognitive-pattern-game-assets";
-import { CpgBrowserFrame } from "@/components/cognitive-pattern-game/cpg-browser-frame";
+import { uiGamePortfolioImages } from "@/data/ui-game-portfolio-case-study";
 
 type Props = {
   project: Project;
@@ -13,16 +12,14 @@ type Props = {
 };
 
 /**
- * Works showcase for Designing Interaction Through Play: browser-style captures
- * from the live prototype (landscape frames suit web interaction work).
+ * Works showcase for UI Game Portfolio: two full-width captures from the live site.
  */
-export function ShowcaseDesigningInteractionPlayCard({ project, index }: Props) {
+export function ShowcaseUiGamePortfolioCard({ project, index }: Props) {
   const reduce = useReducedMotion();
   const { slug, title, shortDescription, tags } = project;
 
-  const main = cognitivePatternGameScreens.entrance;
-  const secondaryLeft = cognitivePatternGameScreens.about;
-  const secondaryRight = cognitivePatternGameScreens.swordman;
+  const primary = uiGamePortfolioImages.showcaseRedefineGaming;
+  const secondary = uiGamePortfolioImages.showcaseCityHero;
 
   const inner = (
     <Link
@@ -31,47 +28,28 @@ export function ShowcaseDesigningInteractionPlayCard({ project, index }: Props) 
       className="group block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:p-12"
     >
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
-        <div className="flex flex-col gap-4 lg:pl-2">
-          <CpgBrowserFrame
-            urlLabel="game-six-psi-82.vercel.app"
-            className="w-full max-w-xl lg:max-w-none"
-            bodyClassName="relative aspect-[16/10] min-h-[200px]"
-          >
-            <Image
-              src={main}
-              alt=""
-              fill
-              className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-              sizes="(max-width: 1024px) 100vw, 560px"
-            />
-          </CpgBrowserFrame>
-          <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
-            <CpgBrowserFrame
-              urlLabel="game-six-psi-82.vercel.app"
-              className="w-[min(100%,280px)] flex-1 sm:max-w-[280px]"
-              bodyClassName="relative aspect-[16/10] min-h-[120px]"
-            >
+        <div className="grid gap-4 lg:pl-2">
+          <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
+            <div className="relative aspect-[16/10] w-full">
               <Image
-                src={secondaryLeft}
+                src={primary}
                 alt=""
                 fill
-                className="object-cover object-center"
-                sizes="280px"
+                className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+                sizes="(max-width: 1024px) 100vw, 560px"
               />
-            </CpgBrowserFrame>
-            <CpgBrowserFrame
-              urlLabel="game-six-psi-82.vercel.app"
-              className="w-[min(100%,280px)] flex-1 sm:max-w-[280px]"
-              bodyClassName="relative aspect-[16/10] min-h-[120px]"
-            >
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
+            <div className="relative aspect-[16/10] w-full">
               <Image
-                src={secondaryRight}
+                src={secondary}
                 alt=""
                 fill
-                className="object-cover object-top"
-                sizes="280px"
+                className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+                sizes="(max-width: 1024px) 100vw, 560px"
               />
-            </CpgBrowserFrame>
+            </div>
           </div>
         </div>
 
