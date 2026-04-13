@@ -35,10 +35,10 @@ export function HomeHero() {
             <h1 className="font-serif text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-[var(--foreground)]">
               {heading}
             </h1>
-            <p className="mt-10 font-sans text-[clamp(1.0625rem,2vw,1.375rem)] font-normal leading-[1.55] tracking-[-0.01em] text-[var(--foreground-soft)] sm:mt-12">
+            <p className="mx-auto mt-10 max-w-2xl font-sans text-[clamp(1.0625rem,2vw,1.375rem)] font-normal leading-[1.55] tracking-[-0.01em] text-[var(--foreground-soft)] sm:mt-12 lg:mx-0">
               {subheading}
             </p>
-            <div className="mt-12 flex flex-col items-center gap-6 sm:mt-14 lg:items-start">
+            <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-6 sm:mt-14 lg:mx-0 lg:items-start">
               <nav
                 className="flex flex-wrap items-center justify-center gap-3 lg:justify-start"
                 aria-label="Social profiles"

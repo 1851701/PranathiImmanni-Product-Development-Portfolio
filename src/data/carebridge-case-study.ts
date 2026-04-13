@@ -4,64 +4,65 @@
 
 export const carebridgeCaseStudy = {
   hero: {
-    subtitle: "AI-assisted patient portal",
+    subtitle: "AI symptom tracking and patient experience",
     description:
-      "A web platform that helps patients understand symptoms, navigate care decisions, and manage their health with clarity and confidence.",
+      "A shipped web experience that helps patients track symptoms, review insights, and take clear next steps with calm language and accessible interaction design.",
     meta: [
-      { label: "Project type", value: "Web application" },
+      { label: "Project type", value: "Live web product" },
       { label: "Role", value: "Product designer" },
       {
         label: "Focus",
-        value: "Healthcare UX, AI-assisted decision support, accessibility",
+        value: "Healthcare UX, AI-assisted guidance, accessibility",
       },
     ],
   },
   projectOverview: {
     date: "2026",
     scope:
-      "Product design for a concept web patient portal, including AI assisted triage, dashboard IA, and accessibility minded UI",
+      "End to end product and UI design for a live symptom tracking platform, from information architecture and flow design to visual system and interaction patterns",
     tools: [
       "Figma",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
       "Healthcare UX",
-      "IA",
       "Accessibility",
-      "AI product ethics",
-      "React concepts",
+      "UX writing",
     ],
     paragraphs: [
-      "Healthcare systems are fragmented. Scheduling, labs, messaging, and education often live in different mental models, and sometimes different logins. Patients arrive already worried. When portals feel like internal tools, small tasks become high stakes navigation problems.",
-      "Many people start with search or social threads when symptoms appear, which can amplify anxiety and misinformation. Traditional patient portals excel at document storage but rarely guide someone from “I do not feel right” to a sensible next step. AI tools can help with triage language, yet they often sit outside the trusted systems where appointments and results already live.",
-      "CareBridge is a concept for a unified web experience: an assistive symptom flow that speaks in plain language, plus the practical tools patients expect. Labs, visits, messages, and medications are organized to reduce cognitive load and support older adults and infrequent users.",
+      "The finished CareBridge site presents a focused patient experience platform that connects symptom guidance with practical care tasks. It is designed to feel calm, readable, and trustworthy from the first screen to the final call to action.",
+      "The product narrative is centered on one promise: reduce noise when people are already stressed. Instead of overwhelming users with technical language, CareBridge uses plain copy, clear hierarchy, and visible next actions.",
+      "The live implementation demonstrates how AI-assisted guidance can coexist with accessibility and emotional clarity, while still feeling polished and modern as a branded product experience.",
     ],
   },
   team: [{ name: "Pranathi Immanni", role: "Product designer" }] as const,
   problem: {
     paragraphs: [
-      "When symptoms appear, patients frequently turn to open web search or forums. The results are inconsistent, alarmist, or overly confident — which increases anxiety without improving decision-making.",
-      "Legacy patient portals are often organized around hospital departments, not patient goals. Labs read like raw data tables, navigation labels hide critical tasks, and users can’t tell what changed since last login.",
-      "Even when results are available, they may be too technical to interpret without a provider — and portals rarely answer the next question: what should I do now? For older adults, small text, low contrast, and inconsistent patterns make an already stressful experience harder.",
+      "Many health experiences create friction at the exact moment people need clarity. Users start with concern, then encounter dense interfaces, technical language, and uncertain recommendations.",
+      "Early patient journeys showed a repeated gap between identifying symptoms and deciding what to do next. People did not just need information, they needed understandable guidance and confidence in the next step.",
+      "The design challenge was to create a healthcare interaction model that feels structured and clinically credible without becoming cold, noisy, or intimidating.",
     ],
   },
   solution: {
     paragraphs: [
-      "CareBridge combines an AI-assisted symptom checker with a structured patient dashboard. The symptom flow is designed as guidance, not diagnosis: possible explanations are framed with uncertainty, paired with transparent disclaimers and care recommendations from self-care through emergency.",
-      "The dashboard prioritizes what needs attention — upcoming visits, new labs, unread messages — using predictable cards and large type. Users move from uncertainty toward action: book appropriate care, read a plain-language lab summary, or message their team without hunting through menus.",
+      "CareBridge ships a complete narrative and product flow: users track symptoms, review AI-assisted insights, and move into clear recommendations. Every major section reinforces calm pacing and readability.",
+      "The interface system uses strong visual hierarchy, predictable card patterns, and direct UX writing. Instead of presenting health data as static records, the product frames guidance as an active, step-by-step experience.",
     ],
     bullets: [
-      "Understandable insights with plain-language summaries",
-      "Clear next steps at every stage (what to do, not just what to read)",
-      "Integrated health management: appointments, labs, messaging, medications",
+      "Clear next-step guidance in each stage of the flow",
+      "Readable interfaces with accessible contrast and spacing",
+      "Consistent structure across About, Features, Process, Product, and Feedback sections",
     ],
   },
   userResearch: {
     paragraphs: [
-      "Synthesis from healthcare UX literature, analogous portal evaluations, and triage best practices informed this concept: people want clarity before detail, and they evaluate trust through wording, transparency, and whether the UI admits limits.",
+      "The final content and interaction model were informed by common healthcare UX patterns and repeated user needs: calm language, fast orientation, and explicit next actions. The live site translates those needs into a structured story with product evidence and social proof.",
     ],
     insights: [
-      "Users want clarity, not medical jargon — definitions and “what this means for you” reduce unnecessary calls and fear.",
-      "Trust is critical: assistive AI must never sound omniscient; language should reflect uncertainty and encourage appropriate escalation.",
-      "Information alone isn’t enough — users want clear next steps (self-care, call primary care, seek urgent or emergency care).",
-      "Accessibility is essential: larger default text, high contrast, simple navigation, and predictable patterns support older adults and vision differences.",
+      "Users respond better to guidance-oriented language than diagnostic-sounding copy.",
+      "A clear stage model improves confidence in health decision flows.",
+      "Accessibility and calm pacing are not visual polish, they are trust signals.",
+      "Social proof and transparent framing help users feel safer adopting AI-assisted care tools.",
     ],
   },
   painPoints: [
@@ -73,14 +74,14 @@ export const carebridgeCaseStudy = {
   ],
   informationArchitecture: {
     intro:
-      "Information architecture is organized around a single home base (Dashboard) and a shallow primary navigation. Each area maps to one patient goal, reducing the need to memorize where tasks live.",
+      "The shipped IA keeps top-level navigation simple and story-driven: About, Features, Process, AI Intelligence, and Contact. Inside the product story, each section maps to a patient question and transitions naturally to the next.",
     tree: [
-      "Dashboard — snapshot of health tasks, alerts, and entry points",
-      "Symptom Checker — guided intake and assistive output + care guidance",
-      "Lab Results — chronological results with simplified summaries first",
-      "Appointments — schedule, prepare, and manage visits",
-      "Messages — secure threads with the care team",
-      "Medications — active medications, instructions, refills",
+      "Hero and value proposition",
+      "About CareBridge and product purpose",
+      "Features and core capabilities",
+      "Three-step process flow",
+      "Product preview and guidance system",
+      "Testimonials and final conversion",
     ],
   },
   userFlows: [
@@ -88,32 +89,32 @@ export const carebridgeCaseStudy = {
       id: "symptom",
       title: "Flow 1 — Symptom checking",
       steps: [
-        "Home / Dashboard",
-        "Start symptom check",
-        "Guided questions (adaptive follow-ups)",
-        "Possible explanations (confidence-aware language)",
-        "Care recommendation + next steps",
+        "Landing and value framing",
+        "Track symptoms",
+        "Review insights",
+        "Receive recommendation",
+        "Take the next step",
       ],
     },
     {
       id: "labs",
       title: "Flow 2 — Lab results",
       steps: [
-        "Dashboard",
-        "Lab results list",
-        "Simplified view (summary + status)",
-        "Plain-language explanation",
-        "Next steps (message provider, retest schedule, what to watch for)",
+        "Feature overview",
+        "Product preview context",
+        "Health status snapshot",
+        "Guidance and labs indicators",
+        "Actionable follow-up direction",
       ],
     },
     {
       id: "booking",
       title: "Flow 3 — Booking care",
       steps: [
-        "Results or symptom output",
-        "Recommended care level",
-        "Book appointment (primary / urgent as appropriate)",
-        "Confirmation + preparation checklist",
+        "Results and recommendation",
+        "Care action prompt",
+        "Contact or follow-up path",
+        "Reassurance and continuity",
       ],
     },
   ],
@@ -121,56 +122,58 @@ export const carebridgeCaseStudy = {
     symptomChecker: {
       title: "AI symptom checker",
       items: [
-        "Guided question flow with adaptive follow-ups",
-        "AI-generated possible conditions with uncertainty framing",
-        "Confidence-aware language — never presented as certainty",
-        "Persistent disclaimers: assistive, not diagnostic",
-        "Care recommendations: self-care, primary care, urgent care, emergency",
+        "Structured symptom intake with clear prompts",
+        "AI-assisted interpretation framed as guidance",
+        "Calm recommendation language that avoids alarmism",
+        "Direct next-step pathways for follow-up action",
       ],
     },
     dashboard: {
       title: "Patient dashboard",
       items: [
-        "Overview of what needs attention and what’s coming next",
-        "Upcoming appointments with clear actions",
-        "Alerts and reminders without alarmist styling",
+        "Health status snapshot at a glance",
+        "Priority cards for key care information",
+        "Visual consistency across all modules",
       ],
     },
     labs: {
       title: "Lab results redesign",
       items: [
-        "Simplified explanations above technical detail",
-        "Visual indicators: normal / attention needed (calm palette)",
-        "Plain-language summaries tied to each result",
+        "Results context shown in plain language",
+        "Status indicators that are readable and calm",
+        "Guidance tied to each result state",
       ],
     },
     messaging: {
       title: "Messaging system",
       items: [
-        "Secure communication with providers",
-        "Clear thread structure and read/unread status",
+        "Team communication concept in product navigation",
+        "Readable thread and update affordances",
       ],
     },
     medications: {
       title: "Medication tracking",
-      items: ["Active medication list with dosing context", "Refill reminders and pharmacy links"],
+      items: [
+        "Medication context integrated with overall health view",
+        "Continuity between symptom insights and treatment actions",
+      ],
     },
   },
   designDecisions: [
     {
       title: "Trust & clarity",
       body:
-        "Avoid definitive diagnoses; use soft, precise language about possibilities. Disclaimers are visible and repeated where outputs could be misread as certainty.",
+        "Copy emphasizes support and direction. Guidance language is specific, but avoids overconfident clinical claims.",
     },
     {
       title: "Accessibility",
       body:
-        "Large default text sizes, high-contrast neutrals and blues, simple navigation with persistent wayfinding. Components sized for motor and vision variance common in older adults.",
+        "The layout prioritizes readable type, strong contrast, and clear spacing so content remains legible across devices and stress levels.",
     },
     {
       title: "Reducing anxiety",
       body:
-        "Calm white/light surfaces; no wall of red warnings. Urgent information uses structure and wording before color. Every critical view ends with next steps.",
+        "Visual rhythm avoids panic cues. Information is staged so users can process, understand, and act without feeling overloaded.",
     },
   ],
   finalScreens: [
@@ -237,8 +240,8 @@ export const carebridgeCaseStudy = {
     ],
   },
   reflection: [
-    "Designing for healthcare means accepting responsibility: every line of copy and every hierarchy choice can change how safe someone feels. CareBridge was an exercise in pairing ambition — better guidance — with restraint: transparent limits, calm visuals, and pathways that respect real clinical workflows.",
-    "Balancing AI capabilities with trust required language design as much as UI: possibilities instead of verdicts, confidence without theater, and next steps that match how care actually works in the U.S. system — primary, urgent, emergency.",
-    "Accessibility and simplicity aren’t extras; they determine whether a portal is usable in the moment someone is scared. If I continued this work, I’d validate flows with older adults and caregivers, pressure-test content with clinical advisors, and ship a documented pattern library aligned with WCAG AA across components.",
+    "This final CareBridge build validated the core premise: people need calm, actionable direction more than raw medical detail when symptoms create uncertainty.",
+    "The project also reinforced that AI in healthcare UX should be framed as assistive guidance, with clear limits and a human-centered tone at every decision point.",
+    "If expanded further, the next step would be usability validation with caregivers and older adults, then iterative refinement of copy and care-path recommendations based on observed comprehension.",
   ],
 } as const;

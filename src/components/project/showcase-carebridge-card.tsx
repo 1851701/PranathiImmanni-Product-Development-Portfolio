@@ -1,26 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
-import { PhoneMock } from "@/components/ui/phone-mock";
-import { ShowcaseSkinWiseCard } from "@/components/project/showcase-skinwise-card";
-import { ShowcaseTeddyCard } from "@/components/project/showcase-teddy-card";
-import { ShowcaseUiGamePortfolioCard } from "@/components/project/showcase-ui-game-portfolio-card";
-import { ShowcaseCareBridgeCard } from "@/components/project/showcase-carebridge-card";
 
-type ShowcaseProjectCardProps = {
+type Props = {
   project: Project;
   index: number;
 };
 
-function ShowcaseStandardProjectCard({
-  project,
-  index,
-}: ShowcaseProjectCardProps) {
+/** CareBridge showcase card: single web screenshot (no phone stack). */
+export function ShowcaseCareBridgeCard({ project, index }: Props) {
   const reduce = useReducedMotion();
-  const { slug, title, shortDescription, tags, thumbnail, showcaseStatus } =
-    project;
+  const { slug, title, shortDescription, tags, thumbnail } = project;
 
   const inner = (
     <Link
@@ -29,30 +22,22 @@ function ShowcaseStandardProjectCard({
       className="group block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:min-h-[24rem] lg:p-12"
     >
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
-        <div className="group/mockups flex items-end justify-center gap-2 sm:gap-3 md:gap-4 lg:justify-start lg:pl-2">
-          <PhoneMock
-            src={thumbnail}
-            className="w-[72px] translate-y-1 opacity-95 sm:w-[88px] md:w-[100px] lg:w-[112px]"
-            priority={index === 0}
-          />
-          <PhoneMock
-            src={thumbnail}
-            className="z-10 w-[72px] -translate-y-2 scale-[1.06] sm:w-[88px] sm:-translate-y-3 md:w-[100px] lg:w-[112px]"
-            priority={index === 0}
-          />
-          <PhoneMock
-            src={thumbnail}
-            className="w-[72px] translate-y-1 opacity-95 sm:w-[88px] md:w-[100px] lg:w-[112px]"
-          />
+        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
+          <div className="relative aspect-[16/10] w-full">
+            <Image
+              src={thumbnail}
+              alt="CareBridge live website hero screenshot"
+              fill
+              className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 1024px) 100vw, 560px"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col justify-center space-y-6 text-center lg:max-w-md lg:text-left xl:max-w-lg">
           <h3 className="font-serif text-3xl font-medium leading-tight tracking-tight text-[var(--foreground)] transition group-hover:opacity-90 sm:text-4xl lg:text-[2.35rem]">
             {title}
           </h3>
-          {showcaseStatus ? (
-            <p className={showcaseStatus.className}>{showcaseStatus.text}</p>
-          ) : null}
           <p className="font-sans text-sm leading-relaxed text-[var(--muted)] sm:text-[0.95rem] sm:leading-relaxed">
             {shortDescription}
           </p>
@@ -100,24 +85,4 @@ function ShowcaseStandardProjectCard({
       </motion.div>
     </motion.article>
   );
-}
-
-/**
- * Product-style showcase: mockups left, copy + tags right; entire card links to project page.
- * Teddy uses a dedicated high-end two-column layout.
- */
-export function ShowcaseProjectCard(props: ShowcaseProjectCardProps) {
-  if (props.project.slug === "teddy") {
-    return <ShowcaseTeddyCard {...props} />;
-  }
-  if (props.project.slug === "skinwise") {
-    return <ShowcaseSkinWiseCard {...props} />;
-  }
-  if (props.project.slug === "ui-game-portfolio") {
-    return <ShowcaseUiGamePortfolioCard {...props} />;
-  }
-  if (props.project.slug === "carebridge") {
-    return <ShowcaseCareBridgeCard {...props} />;
-  }
-  return <ShowcaseStandardProjectCard {...props} />;
 }

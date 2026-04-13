@@ -19,31 +19,18 @@ export function ShowcaseUiGamePortfolioCard({ project, index }: Props) {
   const { slug, title, shortDescription, tags } = project;
 
   const primary = uiGamePortfolioImages.showcaseRedefineGaming;
-  const secondary = uiGamePortfolioImages.showcaseCityHero;
-
   const inner = (
     <Link
       href={`/projects/${slug}`}
       aria-label={`Open project: ${title}`}
-      className="group block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:p-12"
+      className="group block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:min-h-[24rem] lg:p-12"
     >
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
-        <div className="grid gap-4 lg:pl-2">
+        <div className="lg:pl-2">
           <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
             <div className="relative aspect-[16/10] w-full">
               <Image
                 src={primary}
-                alt=""
-                fill
-                className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
-                sizes="(max-width: 1024px) 100vw, 560px"
-              />
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
-            <div className="relative aspect-[16/10] w-full">
-              <Image
-                src={secondary}
                 alt=""
                 fill
                 className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"

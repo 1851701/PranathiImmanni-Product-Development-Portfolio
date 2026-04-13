@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
-import { CpgBrowserFrame } from "@/components/cognitive-pattern-game/cpg-browser-frame";
 import { UiGameDesignLoopDiagram } from "@/components/case-study/case-study-accent-diagrams";
 import {
   caseStudySectionSpacing,
@@ -477,30 +476,6 @@ export function UiGamePortfolioCaseStudy() {
           </div>
 
           <div className="mt-10 space-y-8">
-            <CpgBrowserFrame
-              urlLabel="game-six-psi-82.vercel.app live"
-              bodyClassName="min-h-[min(70vh,560px)]"
-            >
-              <iframe
-                title="UI Game Portfolio live prototype"
-                src={live}
-                className="h-[min(70vh,560px)] w-full border-0"
-                loading="lazy"
-                allow="fullscreen"
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-              />
-            </CpgBrowserFrame>
-            <p className="text-center font-sans text-xs text-[var(--muted)]">
-              If the preview does not load, open the experience in a new tab:{" "}
-              <a
-                href={live}
-                className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
-              >
-                View live
-              </a>
-              .
-            </p>
-
             <div className="flex justify-center pt-4">
               <a
                 href={live}
@@ -515,11 +490,11 @@ export function UiGamePortfolioCaseStudy() {
         </FadeIn>
 
         <FadeIn
-          className={`${block} border-t border-[var(--border)] pt-16 lg:pt-24`}
+          className="mt-8 border-t border-[var(--border)] pt-8 lg:mt-10 lg:pt-10"
         >
-          <div className="mx-auto max-w-[min(42rem,90%)] text-center">
+          <div className="mx-auto max-w-[min(46rem,92%)]">
             <SectionRuleTitle title="Reflection" className="text-center" />
-            <p className="mt-8 font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
+            <p className="mt-8 text-left font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
               {c.reflection.paragraph}
             </p>
           </div>

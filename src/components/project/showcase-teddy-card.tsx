@@ -67,32 +67,27 @@ export function ShowcaseTeddyCard({ project, index }: ShowcaseTeddyCardProps) {
     <Link
       href="/projects/teddy"
       aria-label={`Open project: ${title}`}
-      className={`group/card block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:p-12 ${
+      className={`group/card block rounded-[1.75rem] bg-[var(--surface-elevated)]/90 p-8 [box-shadow:var(--shadow-card)] transition duration-300 ease-out hover:[box-shadow:var(--shadow-card-hover)] md:p-10 lg:min-h-[24rem] lg:p-12 ${
         index === 0
           ? "ring-2 ring-[var(--accent)]/40 hover:ring-[var(--accent)]/55 dark:ring-[var(--accent)]/35"
           : ""
       }`}
     >
-      <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
         <div className="pointer-events-none flex items-center justify-center gap-2.5 pt-2 sm:gap-4 lg:justify-start lg:pl-1 xl:gap-5">
           <LiveTeddyShowcasePhone Screen={TeddyScreenMood} />
           <LiveTeddyShowcasePhone Screen={TeddyScreenHome} emphasize />
           <LiveTeddyShowcasePhone Screen={TeddyScreenJournal} />
         </div>
 
-        <div className="flex flex-col justify-center space-y-8 text-center lg:max-w-xl lg:text-left xl:space-y-10">
-          {index === 0 ? (
-            <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
-              Featured — emotional design
-            </p>
-          ) : null}
-          <h3 className="font-serif text-4xl font-medium leading-[1.1] tracking-tight text-[var(--foreground)] transition duration-300 group-hover/card:opacity-[0.92] sm:text-[2.75rem] lg:text-5xl">
+        <div className="flex flex-col justify-center space-y-6 text-center lg:max-w-md lg:text-left xl:max-w-lg">
+          <h3 className="font-serif text-3xl font-medium leading-tight tracking-tight text-[var(--foreground)] transition duration-300 group-hover/card:opacity-[0.92] sm:text-4xl lg:text-[2.35rem]">
             {title}
           </h3>
           {showcaseStatus ? (
             <p className={showcaseStatus.className}>{showcaseStatus.text}</p>
           ) : null}
-          <p className="font-sans text-base leading-[1.75] text-[var(--muted)] sm:text-[1.05rem] sm:leading-[1.8]">
+          <p className="font-sans text-sm leading-relaxed text-[var(--muted)] sm:text-[0.95rem] sm:leading-relaxed">
             {shortDescription}
           </p>
           <ul className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
@@ -112,9 +107,7 @@ export function ShowcaseTeddyCard({ project, index }: ShowcaseTeddyCardProps) {
 
   if (reduce) {
     return (
-      <article
-        className={`border-b border-[var(--border)] last:border-b-0 ${index === 0 ? "py-16 lg:py-24" : "py-14 lg:py-20"}`}
-      >
+      <article className="border-b border-[var(--border)] py-12 last:border-b-0 lg:py-16">
         {inner}
       </article>
     );
@@ -122,7 +115,7 @@ export function ShowcaseTeddyCard({ project, index }: ShowcaseTeddyCardProps) {
 
   return (
     <motion.article
-      className={`border-b border-[var(--border)] last:border-b-0 ${index === 0 ? "py-16 lg:py-24" : "py-14 lg:py-20"}`}
+      className="border-b border-[var(--border)] py-12 last:border-b-0 lg:py-16"
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-48px" }}

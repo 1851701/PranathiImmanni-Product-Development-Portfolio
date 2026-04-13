@@ -411,9 +411,9 @@ export function TeddyCaseStudy() {
         <FadeIn
           className={`${block} border-t border-[var(--border)] pt-16 lg:pt-24`}
         >
-          <div className="mx-auto max-w-[min(42rem,90%)] text-center">
+          <div className="mx-auto max-w-[min(46rem,92%)] text-center">
             <SectionRuleTitle title="Reflection" className="text-center" />
-            <div className="mt-8 space-y-6 font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
+            <div className="mt-8 space-y-6 text-left font-sans text-base leading-[1.85] text-[var(--foreground-soft)]">
               {c.reflection.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}

@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
         hostname: "game-six-psi-82.vercel.app",
         pathname: "/img/**",
       },
+      {
+        protocol: "https",
+        hostname: "ai-symptom-tracker-sdd9.vercel.app",
+        pathname: "/**",
+      },
     ],
   },
 };

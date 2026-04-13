@@ -52,7 +52,7 @@ export const projects: Project[] = [
     slug: "ui-game-portfolio",
     title: "UI Game Portfolio",
     shortDescription:
-      "Interactive 3D narrative in the browser with physics-based interactions — React, Three.js, Framer Motion, and GSAP. Reached 10K+ unique users in the first 48 hours after launch.",
+      "Interactive 3D narrative in the browser with physics-based interactions — React, Three.js, Framer Motion, and GSAP.",
     tags: ["React", "Three.js", "Framer Motion", "Web", "UX"],
     thumbnail: "/projects/ui-game-portfolio/showcase-works-redefine-gaming.png",
     heroImage: "/projects/ui-game-portfolio/showcase-works-city-hero.png",
@@ -78,19 +78,22 @@ export const projects: Project[] = [
     slug: "carebridge",
     title: "CareBridge",
     shortDescription:
-      "A web patient portal concept that pairs an AI-assisted symptom checker with labs, appointments, and messaging — clarity, trust, and accessibility first.",
+      "A finished AI symptom tracking and patient experience website focused on calm guidance, accessibility, and clear next-step care decisions.",
     tags: ["Healthcare UX", "Web", "AI", "Accessibility"],
-    thumbnail: "https://picsum.photos/seed/carebridge-thumb/1200/800",
-    heroImage: "https://picsum.photos/seed/carebridge-hero/1600/900",
+    thumbnail:
+      "https://ai-symptom-tracker-sdd9.vercel.app/5a0bc5417a14f00d48be9e9220548ab73e79996d9199a5925e08c278a766385c.png",
+    heroImage:
+      "https://ai-symptom-tracker-sdd9.vercel.app/5a0bc5417a14f00d48be9e9220548ab73e79996d9199a5925e08c278a766385c.png",
     overview:
-      "CareBridge explores a unified patient experience: assistive triage language and transparent AI limits, plus the practical tools patients need in one calm dashboard — aligned with how enterprise portals like Epic aim to serve diverse users.",
+      "CareBridge presents a complete patient guidance experience from symptom intake to actionable recommendations, combining product storytelling with readable healthcare UX patterns and trust-focused language.",
     problem:
       "Patients often start with unreliable search, while portals bury tasks and show labs as raw data. The gap between “what might this be?” and “what do I do next?” widens anxiety and delays appropriate care.",
     process:
       "Mapped IA around patient goals, prototyped dashboard and symptom flows with accessibility-minded typography, and defined ethical-AI copy patterns for uncertainty and escalation.",
     solution:
-      "A concept web app combining guided symptom intake, confidence-aware outputs, care-tier recommendations, simplified lab summaries, booking, and secure messaging — designed for older adults and high-trust clinical settings.",
-    tools: ["Figma", "Healthcare UX", "IA", "Accessibility", "AI product ethics", "React concepts"],
+      "A live implementation that connects symptom tracking, insight review, and recommendation pathways in a clean and accessible interface designed to reduce overwhelm.",
+    tools: ["Figma", "Next.js", "Tailwind CSS", "Framer Motion", "Healthcare UX", "Accessibility"],
+    live: "https://ai-symptom-tracker-sdd9.vercel.app/",
   },
   {
     slug: "skinwise",
