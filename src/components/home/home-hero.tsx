@@ -22,11 +22,11 @@ export function HomeHero() {
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-14 xl:gap-16">
           <div className="relative h-[min(72vw,280px)] w-[min(72vw,280px)] shrink-0 overflow-hidden rounded-full bg-neutral-200 ring-1 ring-[var(--border)] sm:h-72 sm:w-72 lg:h-80 lg:w-80">
             <Image
-              src="/pranathi-portrait.jpg"
+              src="/pranathi-portrait.png"
               alt={siteConfig.name}
               fill
               priority
-              className="object-cover object-[center_42%]"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 280px, 320px"
             />
           </div>

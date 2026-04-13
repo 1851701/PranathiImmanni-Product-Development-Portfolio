@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { FavoriteSingerAlbum } from "@/components/home/favorite-singer-album";
 import { LightBlueGradientBackdrop } from "@/components/home/light-blue-gradient-backdrop";
@@ -26,10 +27,21 @@ export function AboutBelowWorksSection() {
         >
           About Me
         </h2>
-        <div className="mx-auto mt-10 max-w-3xl space-y-8 font-serif text-base leading-[1.9] text-neutral-900/95 dark:text-[#d5e8f3] sm:text-[1.0625rem]">
-          {g.aboutParagraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+        <div className="mx-auto mt-10 flex max-w-3xl flex-col items-start gap-8 sm:gap-10 lg:max-w-none lg:flex-row lg:gap-10 xl:gap-12">
+          <div className="relative aspect-[3/4] w-full max-w-[240px] shrink-0 overflow-hidden rounded-2xl bg-sky-950/10 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.2)] ring-1 ring-sky-900/15 sm:max-w-[260px] lg:max-w-[280px]">
+            <Image
+              src="/about/about-me-portrait.png"
+              alt={`${siteConfig.name}, portrait`}
+              fill
+              className="object-cover object-[center_38%]"
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 260px, 280px"
+            />
+          </div>
+          <div className="min-w-0 flex-1 space-y-8 font-serif text-base leading-[1.9] text-neutral-900/95 dark:text-[#d5e8f3] sm:text-[1.0625rem] lg:max-w-3xl lg:pt-1">
+            {g.aboutParagraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         <StarDivider />
