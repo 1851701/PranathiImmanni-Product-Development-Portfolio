@@ -18,8 +18,8 @@ export function AboutBelowWorksSection() {
       aria-labelledby="about-me-heading"
     >
       <LightBlueGradientBackdrop tone="section" />
-      <div className="relative mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        <StarDivider />
+      <div className="relative mx-auto max-w-5xl px-5 pb-16 pt-5 sm:px-8 sm:pb-20 sm:pt-6 lg:px-10 lg:pb-24 lg:pt-8">
+        <StarDivider placement="below-nav" />
 
         <h2
           id="about-me-heading"

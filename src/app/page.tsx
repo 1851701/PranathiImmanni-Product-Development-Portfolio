@@ -9,7 +9,7 @@ export default function HomePage() {
   const featured = getFeaturedProjects();
 
   return (
-    <div className="pb-8 lg:pb-10">
+    <div className="pb-0">
       <HomeHero />
 
       <div className="mx-auto max-w-6xl px-6 pt-12 sm:px-8 lg:px-10 lg:pt-16">
@@ -34,7 +34,7 @@ export default function HomePage() {
       </div>
       <section className="relative overflow-hidden border-t border-sky-900/10 dark:border-sky-900/25">
         <LightBlueGradientBackdrop tone="section" />
-        <div className="relative mx-auto max-w-4xl px-5 pb-8 pt-3 sm:px-8 lg:px-10 lg:pb-10">
+        <div className="relative mx-auto max-w-4xl px-5 pb-4 pt-3 sm:px-8 sm:pb-5 lg:px-10 lg:pb-6">
           <GetInTouchSection />
         </div>
       </section>

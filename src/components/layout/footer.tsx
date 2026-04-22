@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--background)]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:py-9 lg:px-10">
         <p className="text-sm tracking-wide text-[var(--muted)]">
           © {year} {siteConfig.name}
         </p>

@@ -115,10 +115,19 @@ export function PalmDoodle({ className }: { className?: string }) {
   );
 }
 
-export function StarDivider() {
+type StarDividerProps = {
+  /** Tight top when this is the first element under the nav (About page). */
+  placement?: "default" | "below-nav";
+};
+
+export function StarDivider({ placement = "default" }: StarDividerProps) {
+  const marginClass =
+    placement === "below-nav"
+      ? "mt-0 mb-8 sm:mb-10"
+      : "my-10 sm:my-14";
   return (
     <div
-      className="my-14 flex items-center gap-4 sm:my-20"
+      className={`${marginClass} flex items-center gap-4`}
       role="separator"
     >
       <div className="h-px flex-1 bg-neutral-900/15 dark:bg-white/15" />

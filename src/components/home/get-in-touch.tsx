@@ -281,7 +281,7 @@ export function GetInTouchSection() {
       </form>
 
       <div
-        className="mt-8 space-y-2 text-center font-sans text-sm font-medium leading-relaxed tracking-wide text-neutral-800/95 sm:text-[0.95rem] dark:text-[#c5e2f2]"
+        className="mt-6 space-y-2 text-center font-sans text-sm font-medium leading-relaxed tracking-wide text-neutral-800/95 sm:text-[0.95rem] dark:text-[#c5e2f2]"
         aria-label="Contact details"
       >
         <p>
