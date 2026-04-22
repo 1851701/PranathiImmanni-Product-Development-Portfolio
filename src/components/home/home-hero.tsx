@@ -26,7 +26,7 @@ export function HomeHero() {
               alt={siteConfig.name}
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-[50%_36%]"
               sizes="(max-width: 1024px) 280px, 320px"
             />
           </div>
