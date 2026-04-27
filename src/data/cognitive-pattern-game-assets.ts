@@ -1,6 +1,6 @@
 /** Screenshots served by the live deployment (Vite public folder). */
 export const COGNITIVE_PATTERN_GAME_ORIGIN =
-  "https://game-six-psi-82.vercel.app" as const;
+  "https://ux-game-portfolio.vercel.app" as const;
 
 export const cognitivePatternGameScreens = {
   /** Hero / landing frame */

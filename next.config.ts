@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "game-six-psi-82.vercel.app",
+        hostname: "ux-game-portfolio.vercel.app",
         pathname: "/img/**",
       },
       {

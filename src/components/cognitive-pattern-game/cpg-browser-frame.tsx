@@ -13,7 +13,7 @@ type CpgBrowserFrameProps = {
  */
 export function CpgBrowserFrame({
   children,
-  urlLabel = "game.vercel.app",
+  urlLabel = "ux-game-portfolio.vercel.app",
   className = "",
   bodyClassName = "",
 }: CpgBrowserFrameProps) {

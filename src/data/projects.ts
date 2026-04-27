@@ -72,7 +72,7 @@ export const projects: Project[] = [
       "TypeScript",
       "Figma",
     ],
-    live: "https://game-six-psi-82.vercel.app/",
+    live: "https://ux-game-portfolio.vercel.app/",
   },
   {
     slug: "carebridge",

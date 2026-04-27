@@ -3,7 +3,7 @@
  */
 
 export const UI_GAME_PORTFOLIO_LIVE =
-  "https://game-six-psi-82.vercel.app/" as const;
+  "https://ux-game-portfolio.vercel.app/" as const;
 
 /** Local screenshots under /public/projects/ui-game-portfolio/ */
 export const uiGamePortfolioImages = {

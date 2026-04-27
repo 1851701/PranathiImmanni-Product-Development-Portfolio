@@ -127,7 +127,7 @@ This repo is my **Next.js** portfolio site: case studies, resume, contact, motio
 
 **Web experience** with game influenced art direction and a tight interaction loop. The case study pairs full width captures of the live site with an embed so visitors can see tone and try the loop. **Pranathi Immanni** — product designer; **Kushal Kongara** — software engineer ([portfolio](https://kushalkongara.vercel.app/)).
 
-**Live demo:** [game-six-psi-82.vercel.app](https://game-six-psi-82.vercel.app/)
+**Live demo:** [ux-game-portfolio.vercel.app](https://ux-game-portfolio.vercel.app/)
 
 **Tags:** Web · Interaction design · UI · UX · JavaScript
 
