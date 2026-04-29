@@ -52,7 +52,7 @@ export const skinwiseCaseStudy = {
     {
       name: "Pranavi Immanni",
       role: "Data science & AI engineering",
-      href: "https://pranavi-portfolio-teal.vercel.app/",
+      href: "https://pranaviimmanni.vercel.app/",
     },
   ] as const,
   info: [
